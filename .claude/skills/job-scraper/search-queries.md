@@ -12,69 +12,78 @@ The `site:` query templates in this file are the **WebSearch fallback** — for 
 
 ## Search Sites
 
-Primary (your market's job boards - scaffold one with `/add-portal`):
-- **[YOUR_JOB_BOARD]** - your market's largest general job board
-- **linkedin.com/jobs** - LinkedIn job listings (filter: [YOUR_COUNTRY] / [YOUR_CITY]); also covered by `linkedin-search` CLI
-- **[YOUR_INDUSTRY_JOB_BOARD]** - a niche/industry board for your field (optional)
-- **[YOUR_ADDITIONAL_JOB_BOARD]** - another major board for your market (optional)
+Primary (portal CLIs installed under `.agents/skills/` — `/scrape` runs these directly, no `site:` query needed):
+- **greenhouse-search** — BillionToOne, Natera, Twist Bioscience (public Greenhouse JSON API)
+- **workday-search** — Biogen, Amgen, Abbott, Genentech (public Workday CXS JSON API)
+- **linkedin-search** / **freehire-search** — general-purpose, country-agnostic
 
-Secondary (company career pages via Google):
-- Direct Google searches with `site:` filters for known target companies
+Secondary (no CLI available — WebSearch `site:` fallback):
+- **linkedin.com/jobs** - LinkedIn job listings (filter: California / United States)
+- **indeed.com** - general US job board
+- **glassdoor.com** - general US job board, also useful for company research
+- Individual target-company career pages for companies without a portal CLI:
+  - Illumina, Bio-Rad, Agilent — Workday-hosted but not yet added to `workday-search`'s registry
+  - Applied Medical — custom career site (careers.appliedmedical.com/north-america/jobs), no ATS API identified
+  - Cedars-Sinai — careers.cshs.org, ATS platform unconfirmed
+  - Avid Bioservices — Jobvite-hosted (jobs.jobvite.com/avidbio/jobs), server-rendered HTML, no JSON API found
+  - Eli Lilly — Workday-hosted but its CXS API rejects requests outright (see `.agents/skills/workday-search/url-reference.md`)
+  - Quest Diagnostics — Oracle Cloud HCM (careers.questdiagnostics.com), no public JSON API identified
+  - BioMarin, Axiom Bio, and similar biomedical device/diagnostics/genomics companies
 
 ## Query Categories
 
-Queries are grouped by priority. Write **each category in every language from your Languages table** (see Language scope above). Combine each query with your location terms (e.g. your city, region, or metro area) where the site supports it.
+Queries are grouped by priority. Write **each category in every language from your Languages table** (see Language scope above). Each query should be combined with your location terms (California, Carmel-to-Novato corridor, San Diego, or "remote") where the site supports it.
 
 **Organize by function, not job title.** The same underlying work carries different titles across companies and markets (a "Data Scientist" role at one employer may be posted as "Insights Analyst" or "Data Consultant" at another). Name each priority category after the function it covers, and list several plausible job titles as query variants within that category rather than betting an entire priority tier on one exact title string.
 
-### Priority 1: [YOUR_PRIMARY_ROLE_TYPE]
+### Priority 1: Quality & Test Engineering
 
-These match your strongest and most desired career direction.
-
-```
-site:[YOUR_JOB_BOARD] "[YOUR_PRIMARY_JOB_TITLE_1]" [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "[YOUR_PRIMARY_JOB_TITLE_2]" [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "[YOUR_KEY_SKILL]" [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_PRIMARY_JOB_TITLE_1]" [YOUR_COUNTRY]
-```
-
-### Priority 2: [YOUR_DOMAIN_EXPERTISE]
-
-These match your domain expertise.
+These match your strongest and most desired near-term direction - entry-level quality/test roles at biomedical device and diagnostics companies.
 
 ```
-site:[YOUR_JOB_BOARD] [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] OR [YOUR_REGION]
-site:[YOUR_JOB_BOARD] [YOUR_DOMAIN_KEYWORD_2] [YOUR_COUNTRY]
-site:linkedin.com/jobs [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] [YOUR_COUNTRY]
+site:linkedin.com/jobs "Quality Engineer" California
+site:linkedin.com/jobs "Quality Control Specialist" California
+site:linkedin.com/jobs "Test Engineer" fluidics OR instrumentation California
+site:indeed.com "Quality Engineer" biomedical devices California
 ```
 
-### Priority 3: [YOUR_ADJACENT_ROLE_TYPE]
+### Priority 2: Research & R&D Associate Roles
 
-Adjacent roles you could pivot into.
-
-```
-site:[YOUR_JOB_BOARD] "[YOUR_ADJACENT_TITLE_1]" [YOUR_KEY_SKILL] [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "[YOUR_ADJACENT_TITLE_2]" [YOUR_KEY_SKILL] [YOUR_CITY]
-```
-
-### Priority 4: Broader Technical / Consulting
-
-Wider net for general technical roles.
+These match your domain expertise in fluidics, instrumentation, and COMSOL-based modeling.
 
 ```
-site:[YOUR_JOB_BOARD] [YOUR_KEY_SKILL] developer [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_KEY_SKILL] developer" [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "technical consultant" [YOUR_DOMAIN] [YOUR_CITY]
+site:linkedin.com/jobs "Research Associate" fluidics OR microfluidics California
+site:linkedin.com/jobs "R&D Associate" OR "R&D Technician" instrumentation California
+site:indeed.com "Research Associate" biomedical devices California
+```
+
+### Priority 3: Automation & Adjacent Roles
+
+Adjacent roles you could pivot into, including robotics/automation.
+
+```
+site:linkedin.com/jobs "Automation Engineer" biomedical OR devices California
+site:linkedin.com/jobs "Scientist" fluidics OR microfluidics California
+```
+
+### Priority 4: Broader Biomedical Engineering
+
+Wider net for general biomedical/instrumentation engineering roles.
+
+```
+site:linkedin.com/jobs "biomedical engineer" entry level California
+site:indeed.com "instrumentation engineer" entry level California
+site:linkedin.com/jobs "Engineer I" fluidics OR instrumentation California
 ```
 
 ## Location Filter
 
-When evaluating results, verify the job location is within reasonable commute distance from your home. Define acceptable areas:
-- [YOUR_CITY] and surrounding areas
-- [ACCEPTABLE_AREA_1]
-- [ACCEPTABLE_AREA_2]
-- [BORDERLINE_AREA] (borderline - ~X min by transit)
-- [TOO_FAR_AREA] (too far)
+When evaluating results, verify the job location fits your preferences. Define acceptable areas:
+- Ideal: California - Carmel to Novato corridor (Central Coast, Bay Area, North Bay)
+- Ideal: San Diego, CA
+- Acceptable: Remote (any location)
+- Borderline: Other California metro areas (Los Angeles, Sacramento, Orange County) - open to relocating
+- Deal-breaker (not location, but related): more than 50% travel required
 
 ## Language Filter
 

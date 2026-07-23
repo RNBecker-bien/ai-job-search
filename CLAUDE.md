@@ -1,10 +1,10 @@
-# Job Application Assistant for [YOUR_NAME]
+# Job Application Assistant for Richard Becker
 
 <!-- SETUP: This file is populated by running /setup -->
 <!-- After running /setup, all [PLACEHOLDER] tokens will be replaced with your actual information -->
 
 ## Role
-This repo is a job application workspace. Claude acts as a career advisor and application assistant for [YOUR_NAME], helping with:
+This repo is a job application workspace. Claude acts as a career advisor and application assistant for Richard Becker, helping with:
 1. **Job fit evaluation** - Assess job postings against your profile (skills, experience, behavioral traits)
 2. **CV tailoring** - Adapt existing CV templates (LaTeX/moderncv) to target specific roles
 3. **Cover letter writing** - Draft targeted cover letters using existing templates (LaTeX)
@@ -16,76 +16,78 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 <!-- This section is auto-populated by /setup. You can also fill it in manually. -->
 
 ### Identity
-- **Name:** [YOUR_NAME]
-- **Location:** [YOUR_CITY], [YOUR_COUNTRY] ([YOUR_COMMUTE_CONSTRAINTS])
+- **Name:** Richard Becker
+- **Location:** Riverside, California, USA (open to relocating anywhere in California between Carmel and Novato, or San Diego; remote OK; max 50% travel)
 - **Languages:**
   | Language | Level |
   |----------|-------|
-  | [LANGUAGE] | [LEVEL] |
+  | English | Native |
   <!-- Every language you work in professionally, with your level (CEFR, "native," "professional
   working proficiency," whatever your CV/LinkedIn use - no need to force it into one scale). An
   undeclared language is a hard deal-breaker if a posting requires it; a declared language at a
   lower level than a posting wants is flagged for your own judgment, not auto-rejected. See
   04-job-evaluation.md's Language Gate. -->
-- **CV language:** [YOUR_CV_LANGUAGE] <!-- English unless your market expects otherwise; /setup asks -->
+- **CV language:** English
 
-- **Status:** [YOUR_EMPLOYMENT_STATUS]
-- **LinkedIn headline:** "[YOUR_LINKEDIN_HEADLINE]"
+- **Status:** Undergraduate researcher; BS Bioengineering candidate, expected June 2026
+- **LinkedIn headline:** "Undergraduate Researcher at University of California, Riverside"
 
 ### Education
 <!-- List your degrees, most recent first -->
-- **[DEGREE_LEVEL] in [FIELD]** ([YEAR_START]-[YEAR_END]) - [INSTITUTION]
-  - Thesis: "[THESIS_TITLE]"
-  - Topics: [KEY_TOPICS]
+- **BS in Bioengineering and Biomedical Engineering** (2022-2026) - University of California, Riverside
+  - Topics: Fluid Dynamics, Bioinstrumentation, Control Systems, Biomechanics, Biotechnology, Biochemistry, Biomaterials, Tissue Engineering, Clinical Hematology, Immunology, Analytical & Clinical Chemistry, Medical Diagnostics, Biomedical Imaging, Data Analysis
 
 ### Professional Experience
 <!-- List your roles, most recent first -->
-- **[JOB_TITLE]** ([START_DATE] - [END_DATE]) - **[COMPANY]** ([LOCATION])
-  - [KEY_RESPONSIBILITY_1]
-  - [KEY_RESPONSIBILITY_2]
-  - [KEY_ACHIEVEMENT]
+- **Undergraduate Research Assistant** (Sept 2024 - Present) - **University of California, Riverside** (Dept. of Chemical and Environmental Engineering, Prof. Wheeldon's Lab)
+  - Developed computer vision pipelines (Python, ImageJ) for Phenotypic, an open-source microbial phenotyping framework, including a 200+ image ground-truth segmentation dataset
+  - Improved colony detection accuracy ~40% over SGATools and Iris through dataset curation, parameter optimization, and benchmarking
+  - Contributing LLM-assisted parameter optimization to automate image-processing workflow configuration
 
 ### Technical Skills
-- **Primary:** [YOUR_PRIMARY_SKILLS]
-- **Secondary:** [YOUR_SECONDARY_SKILLS]
-- **Domain:** [YOUR_DOMAIN_EXPERTISE]
-- **Software:** [YOUR_TOOLS_AND_SOFTWARE]
+- **Primary:** Python, MATLAB, COMSOL Multiphysics, Arduino
+- **Secondary:** Git/GitHub, ImageJ/FIJI, JMP, LabView (basic)
+- **Domain:** Fluidic and microfluidic systems, biomedical instrumentation, embedded control systems, computer vision for microbial phenotyping
+- **Software:** COMSOL Multiphysics, ImageJ/FIJI, Raspberry Pi, NumPy, pandas, OpenCV, scikit-image, matplotlib
 
 ### Certifications
 <!-- List relevant certifications with dates -->
-- **[CERTIFICATION_NAME]** - [HOURS]h - completed [DATE]
+- **UCR Library Summer Robotics Camp**
+- **TestGorilla Skill Assessment - Analyzing Data** - 99th percentile
+- **TestGorilla Skill Assessment - Problem Solving** - 96th percentile
 
 ### Publications
 <!-- List peer-reviewed publications, if any -->
-- [AUTHOR_LIST] ([YEAR]). [TITLE]. [JOURNAL].
+- Becker, R., et al. (2026, in preparation). Phenotypic: A Modular Python Image Analysis Framework for Microbial Phenotyping.
 
 ### Awards
 <!-- List relevant awards, hackathons, competitions -->
-- [AWARD_NAME] - [EVENT] ([YEAR])
+- None currently on record - update as earned
 
 ### Behavioral Profile
 <!-- Your behavioral assessment results (PI, DISC, Myers-Briggs, or self-assessment) -->
-- **[TRAIT_1]** - [DESCRIPTION]
-- **[TRAIT_2]** - [DESCRIPTION]
-- **Strengths:** [YOUR_STRENGTHS]
-- **Growth areas:** [YOUR_GROWTH_AREAS]
-- **Thrives in:** [YOUR_IDEAL_ENVIRONMENT]
+- **Progress-oriented** - Motivated by tangible, visible output: simulations, new drawings, new engineering approaches
+- **Collaborative** - Enjoys team environments and bouncing ideas off colleagues
+- **Strengths:** Hands-on technical execution across fluidics, instrumentation, and computer vision; fast iteration from idea to tangible result
+- **Growth areas:** [Not yet defined - update as you gather feedback]
+- **Thrives in:** Team-based R&D/engineering environments with visible, iterative progress
 
 ### What Excites You
 <!-- What motivates you professionally -->
-- [PASSION_1]
-- [PASSION_2]
+- Seeing tangible progress: simulations, new drawings, new engineering approaches
+- Collaborating with a team and bouncing ideas off other people
+- Contributing to healthcare/medicine through biomedical devices; robotics work is also a strong interest
 
 ### Target Sectors
 <!-- Industries and companies you're targeting -->
-- [SECTOR_1]: [EXAMPLE_COMPANIES]
-- [SECTOR_2]: [EXAMPLE_COMPANIES]
+- Biomedical devices / diagnostics / genomics: Illumina, Bio-Rad, Agilent, BillionToOne, Natera, Applied Medical, BioMarin Pharmaceutical, Biogen, Amgen, Cedars-Sinai, Avid Bioservices, Twist Bioscience, Axiom Bio, Eli Lilly, Abbott, Quest Diagnostics, Genentech, and similar companies
+- Robotics / automation (secondary interest, adjacent to biomedical instrumentation)
 
 ### Deal-breakers
 <!-- Hard constraints on job search. Language requirements are handled separately and
 automatically from your Languages table above - don't duplicate them here. -->
-- [DEALBREAKER_1]
-- [DEALBREAKER_2]
+- More than 50% travel
+- Below $70,000 salary baseline
 
 ## Repo Structure
 - `cv/` - LaTeX CV variants (moderncv template, banking style)
