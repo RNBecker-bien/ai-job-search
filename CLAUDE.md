@@ -17,7 +17,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ### Identity
 - **Name:** Richard Becker
-- **Location:** Riverside, California, USA (open to relocating anywhere in California between Carmel and Novato, or San Diego; remote OK; max 50% travel)
+- **Location:** Riverside, California, USA (open to relocating anywhere in California between Carmel and Sonoma, or San Diego; also open to Chicago IL, Boston MA, New York NY, and Raleigh NC, including within ~50 miles of each; remote OK; max 50% travel)
 - **Languages:**
   | Language | Level |
   |----------|-------|

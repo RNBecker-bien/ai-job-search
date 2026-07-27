@@ -32,7 +32,7 @@ Secondary (no CLI available — WebSearch `site:` fallback):
 
 ## Query Categories
 
-Queries are grouped by priority. Write **each category in every language from your Languages table** (see Language scope above). Each query should be combined with your location terms (California, Carmel-to-Novato corridor, San Diego, or "remote") where the site supports it.
+Queries are grouped by priority. Write **each category in every language from your Languages table** (see Language scope above). Each query should be combined with your location terms (California, Carmel-to-Sonoma corridor, San Diego, Chicago, Boston, New York, Raleigh, or "remote") where the site supports it.
 
 **Organize by function, not job title.** The same underlying work carries different titles across companies and markets (a "Data Scientist" role at one employer may be posted as "Insights Analyst" or "Data Consultant" at another). Name each priority category after the function it covers, and list several plausible job titles as query variants within that category rather than betting an entire priority tier on one exact title string.
 
@@ -76,10 +76,31 @@ site:indeed.com "instrumentation engineer" entry level California
 site:linkedin.com/jobs "Engineer I" fluidics OR instrumentation California
 ```
 
+### Priority 5: Computer Vision & Applications Science (Biological/Scientific)
+
+Matches your Phenotypic computer vision work and microbial phenotyping domain, plus applications-facing roles common at diagnostics/genomics companies. Applications Scientist and Field Applications Scientist queries stay scoped to biomedical/life-sciences employers to avoid generic sales-engineering results.
+
+```
+site:linkedin.com/jobs "Bioimage Analyst" OR "Imaging Scientist" California
+site:linkedin.com/jobs "Image Analysis Scientist" biomedical OR life sciences California
+site:linkedin.com/jobs "Computer Vision Engineer" biomedical OR life sciences OR diagnostics California
+site:linkedin.com/jobs "Machine Vision Engineer" biomedical OR life sciences California
+site:linkedin.com/jobs "Microbiology Automation" OR "High-Throughput Screening" imaging California
+site:linkedin.com/jobs "Phenotyping" biological OR microbial California
+site:linkedin.com/jobs "Microfluidics Engineer" OR "Fluidics Engineer" California
+site:linkedin.com/jobs "Applications Scientist" diagnostics OR genomics OR biomedical California
+site:linkedin.com/jobs "Field Applications Scientist" diagnostics OR genomics OR biomedical California
+site:linkedin.com/jobs "Process Development Associate" OR "Process Engineer I" biopharma OR biotech California
+site:linkedin.com/jobs "Lab Automation Engineer" OR "Automation Technician" biotech OR life sciences California
+site:linkedin.com/jobs "Product Applications Engineer" biomedical OR life sciences California
+site:linkedin.com/jobs "Data Analyst" life sciences OR biotech California
+site:linkedin.com/jobs "Biomedical Engineer I" OR "Associate Engineer" California
+```
+
 ## Location Filter
 
 When evaluating results, verify the job location fits your preferences. Define acceptable areas:
-- Ideal: California - Carmel to Novato corridor (Central Coast, Bay Area, North Bay)
+- Ideal: California - Carmel to Sonoma corridor (Central Coast, Bay Area, North Bay)
 - Ideal: San Diego, CA
 - Acceptable: Remote (any location)
 - Borderline: Other California metro areas (Los Angeles, Sacramento, Orange County) - open to relocating

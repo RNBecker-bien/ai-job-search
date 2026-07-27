@@ -9,7 +9,7 @@ framework_version: 1.1.1
 
 ## Identity
 - **Name:** Richard Becker
-- **Location:** Riverside, California, United States
+- **Location:** Riverside, California, United States (open to relocating anywhere in California between Carmel and Sonoma, or San Diego; also open to Chicago IL, Boston MA, New York NY, and Raleigh NC, including within ~50 miles of each; remote OK; max 50% travel)
 - **Phone:** (831) 706-6378
 - **Email:** becker.richardn@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/richardnbecker
