@@ -32,7 +32,7 @@ Overall GPA: 3.27 (per official UCR transcript, issued 2026-07-20). **Not for CV
 Department of Chemical and Environmental Engineering, UCR Bourns College of Engineering (Prof. Wheeldon's Lab)
 - Develop image analysis tools for Phenotypic, an open-source Python framework for high-throughput microbial phenotyping
 - Constructed a ground-truth dataset of 200+ manually annotated segmentation masks spanning multiple fungal species for algorithm validation
-- Designed computer vision pipelines using Python and ImageJ to automate colony segmentation, object filtering, and LAB color-space analysis across hundreds of high-resolution images
+- Designed computer vision pipelines using Python and ImageJ to automate colony segmentation, object filtering, and LAB color-space analysis across hundreds of high-resolution images (including *Kluyveromyces marxianus*, *Rhodotorula*, and *Neurospora crassa*)
 - Improved colony detection accuracy by approximately 40% compared with SGATools and Iris through dataset curation, parameter optimization, and benchmarking
 - Applied clustering, regression, correlation analysis, and multivariate statistics to identify phenotypic growth trends from large-scale microbial datasets
 - Contributing LLM-assisted parameter optimization capabilities to automate image processing workflow configuration
