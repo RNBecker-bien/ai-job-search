@@ -123,6 +123,14 @@ The font wrapper is mandatory — if you just move `\begin{itemize}` outside `\l
 | `\closing{text}` | Closing line |
 | `\signature{name}` | Printed name below signature |
 
+## Patterns Observed in Past Applications
+
+*[Extracted by `/setup` Path A from 5+ archived cover letters: Applied Medical, BillionToOne, Bio-Rad, BioMarin, BigHat]*
+
+- **Opening hook:** The first paragraph leads with a company- or product-specific concrete detail (a technique, a metric, a platform name) connected to a broader theme, before naming the role - not a generic "I am writing to apply for..." opener.
+- **Technique-mapping paragraph:** The second paragraph maps specific bench techniques or tools directly to stated role requirements, usually naming the exact course/project context where each was performed (e.g. "in my biotechnology laboratory at UC Riverside, I performed...").
+- **Honesty paragraph:** Several letters include an explicit "gaps worth naming directly" or "I want to be transparent" paragraph acknowledging what's missing (industry vs. academic setting, an unused instrument/platform) before the closing - this consistently precedes the closing line rather than being buried mid-letter.
+
 ## Tailoring Guidelines
 
 ### Salutation

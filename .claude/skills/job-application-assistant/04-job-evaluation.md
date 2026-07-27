@@ -163,6 +163,14 @@ Present the evaluation as:
 - [ ] Identified network contacts who may know the team/manager
 ```
 
+## Calibration from Past Applications
+
+- **3 applications now have final outcomes, all rejections, none reaching an interview:**
+  - **Illumina - Engineer I, Fluidic Systems** (entry-level fluidics/instrumentation role): rejected before interview (2026-05-30).
+  - **Applied Medical - Quality Engineer I**: rejected before interview (2026-07-17).
+  - **BillionToOne - Research Associate**: advanced to a skills assessment before being rejected (2026-07-02) - the furthest progress of the three, suggesting some real traction even though it did not convert.
+- **Emerging pattern (n=3, watch for repetition):** entry-level fluidics/QC/bench-science roles at established medtech and diagnostics companies have not converted past initial screening despite moderate-to-good fit scores (55-70 range). Possible driver: academic-only bench experience vs. the industry lab experience these roles often screen for. Not yet strong enough to change scoring weights, but worth flagging to the user if a 4th similar rejection lands.
+
 ## Weighting
 - Technical Skills: 30%
 - Experience Match: 25%
