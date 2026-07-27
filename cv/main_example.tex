@@ -1,4 +1,4 @@
-%% Example CV - [YOUR_NAME]
+%% Example CV - Richard Becker
 %% Comprehensive overview of all competencies, experience, and achievements.
 %% Use as a master reference when tailoring role-specific CVs.
 %%
@@ -10,16 +10,18 @@
 \moderncvstyle{banking}
 \moderncvcolor{blue}
 
-% Force the name and section headings to render in moderncv blue (color1).
-% Default banking leaves them black: moderncvstylebanking.sty's \colorlet
-% copies (not aliases) the pre-scheme accent colour, so the name colours are
-% frozen before \moderncvcolor runs. Re-let them after. \namefont is the hook
-% every name-style macro routes through, so this also works on moderncv 2.3.1
-% (Debian/Ubuntu apt), which has no \firstnamestyle/\lastnamestyle at all.
-\renewcommand*{\namefont}{\fontsize{34}{36}\bfseries\upshape}
-\colorlet{firstnamecolor}{color1}
-\colorlet{lastnamecolor}{color1}
-\colorlet{namecolor}{color1}
+% Override moderncv's color1 (normally set to blue by \moderncvcolor{blue}
+% above) to the standard custom accent. This recolors everything that keys
+% off color1: name, section headings (via the renewcommands below), bullet
+% markers, and other banking-style accents.
+\usepackage{xcolor}
+\definecolor{color1}{HTML}{106103}
+
+% Force both first and last name AND section headings to render in the
+% custom accent color. Default banking on lualatex+MiKTeX leaves these black
+% without this override, which looks inconsistent with the rest of the scheme.
+\renewcommand*{\firstnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
+\renewcommand*{\lastnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
 \renewcommand*{\sectionstyle}[1]{{\sectionfont\color{color1}#1}}
 
 \usepackage[utf8]{inputenc}
@@ -30,26 +32,21 @@
 % through \PassOptionsToPackage instead, which is what removes that clash.
 \AtEndPreamble{\hypersetup{
     colorlinks=true,
-    linkcolor=blue,
+    linkcolor=color1,
     filecolor=magenta,
-    urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
-    % Keep pdfpagemode=UseNone: this block runs after moderncv's own
-    % \AtEndPreamble (moderncv.cls sets pdfpagemode there), so a FullScreen
-    % value here would win and open every CV in fullscreen presentation mode.
-    pdfpagemode=UseNone,
-}}
+    urlcolor=color1,
+    pdftitle={Richard Becker - CV},
+    pdfpagemode=FullScreen,
+}
 \usepackage[scale=0.80]{geometry}
 \usepackage{import}
 
 % personal data
-\name{[First]}{[Last]}
-% If you have no address to list, DELETE this whole line. \address{}{}{} fails
-% with "There's no line here to end" on every moderncv version.
-\address{[Your Address, City, Country]}{}{}
-\phone[mobile]{[+XX XXXXXXXXXX]}
-\email{[your.email@example.com]}
-\extrainfo{\href{[https://linkedin.com/in/your-profile]}{LinkedIn}, \href{[https://github.com/your-username]}{GitHub}}
+\name{Richard}{Becker}
+\address{Riverside, California, USA}{}{}
+\phone[mobile]{(831) 706-6378}
+\email{becker.richardn@gmail.com}
+\extrainfo{\href{https://www.linkedin.com/in/richardnbecker}{LinkedIn}, \href{https://github.com/RNBecker-bien}{GitHub}}
 
 \begin{document}
 
@@ -60,7 +57,7 @@
 % ============================================================
 
 \vspace{6pt}
-\small{[Write a 3-5 line profile statement tailored to the role you're applying for. Focus on what makes you uniquely qualified. Example: "Data scientist with a PhD in [field] and X years of industry experience. Combines deep domain expertise in [domain] with strong applied machine learning and Python development skills. Experienced in developing end-to-end ML pipelines, from data ingestion to stakeholder-facing dashboards."]}
+\small{Bioengineering graduate (Jun 2026) with hands-on experience in fluidic systems design, microfluidic device modeling, and instrumentation development. Combines computer vision and data analysis skills (Python, MATLAB) with lab-based engineering work in COMSOL modeling, embedded control systems, and experimental design. Tailor this statement to each specific role - see \texttt{05-cv-templates.md} for role-specific templates.}
 
 % ============================================================
 %     CORE COMPETENCIES
@@ -70,15 +67,15 @@
 \vspace{1pt}
 \begin{itemize}
 
-\item \textbf{[Skill Category 1]}: [Specific skills, frameworks, tools. Be concrete.]
+\item \textbf{Programming \& Data Analysis}: Python (NumPy, pandas, OpenCV, scikit-image, matplotlib), MATLAB, statistical analysis, clustering, regression
 
-\item \textbf{[Skill Category 2]}: [Specific skills, frameworks, tools.]
+\item \textbf{Fluidics \& Modeling}: COMSOL Multiphysics (laminar flow, species transport, porous media), microfluidic chip design, diffusion gradient characterization
 
-\item \textbf{[Skill Category 3]}: [Specific skills, frameworks, tools.]
+\item \textbf{Instrumentation \& Control}: Closed-loop feedback control, solenoid valve flow regulation, sensor calibration, Arduino embedded systems design
 
-\item \textbf{[Skill Category 4]}: [Domain expertise, methods, approaches.]
+\item \textbf{Laboratory Techniques}: PCR, cell culture, DNA purification, gel electrophoresis, chromatography, protein purification, Sanger sequencing
 
-\item \textbf{[Skill Category 5]}: [Tools, platforms, software.]
+\item \textbf{Software \& Tools}: Git/GitHub, ImageJ/FIJI, JMP, Raspberry Pi, LabView (basic)
 
 \end{itemize}
 
@@ -91,31 +88,21 @@
 \begin{itemize}
 
 % --- Most Recent Role ---
-\item{\cventry{[YYYY-Present]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\item{\cventry{Sept 2024--Present}{Undergraduate Research Assistant}{University of California, Riverside}{Riverside, CA}{}{\vspace{1pt}
 \begin{itemize}
-    \item {[Achievement or responsibility 1 - be specific, use numbers where possible]}
-    \item {[Achievement or responsibility 2]}
-    \item {[Achievement or responsibility 3]}
-    \item {[Achievement or responsibility 4]}
+    \item Developed image analysis tools for Phenotypic, an open-source Python framework for high-throughput microbial phenotyping
+    \item Constructed a ground-truth dataset of 200+ manually annotated segmentation masks spanning multiple fungal species
+    \item Designed computer vision pipelines using Python and ImageJ to automate colony segmentation and LAB color-space analysis
+    \item Improved colony detection accuracy by approximately 40\% compared with SGATools and Iris
 \end{itemize}}}
 
 \vspace{3pt}
 
 % --- Previous Role ---
-\item{\cventry{[YYYY-YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\item{\cventry{Nov 2022--Jun 2024}{Treasurer}{Pre-Medicine Student Alliance, UC Riverside}{Riverside, CA}{}{\vspace{1pt}
 \begin{itemize}
-    \item {[Achievement or responsibility 1]}
-    \item {[Achievement or responsibility 2]}
-    \item {[Achievement or responsibility 3]}
-\end{itemize}}}
-
-\vspace{3pt}
-
-% --- Earlier Role ---
-\item{\cventry{[YYYY-YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
-\begin{itemize}
-    \item {[Achievement or responsibility 1]}
-    \item {[Achievement or responsibility 2]}
+    \item Managed organizational budgeting, fundraising, and financial records
+    \item Coordinated logistics supporting community outreach initiatives serving senior and unhoused populations
 \end{itemize}}}
 
 \end{itemize}
@@ -128,14 +115,8 @@
 \vspace{1pt}
 \begin{itemize}
 
-\item{\cventry{[YYYY-YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-Thesis: ``[Thesis Title].'' [Brief description of research focus.]
-}}
-
-\vspace{3pt}
-
-\item{\cventry{[YYYY-YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-[Brief description or key topics.]
+\item{\cventry{2022--2026}{BS in Bioengineering}{University of California, Riverside}{Riverside, CA}{}{\vspace{1pt}
+Coursework: Fluid Dynamics, Bioinstrumentation, Control Systems, Biomechanics, Biotechnology, Biochemistry, Biomaterials, Tissue Engineering, Medical Diagnostics
 }}
 
 \end{itemize}
@@ -147,7 +128,7 @@ Thesis: ``[Thesis Title].'' [Brief description of research focus.]
 \section{Languages}
 \vspace{1pt}
 \begin{itemize}
-\item {[Language 1] (native), [Language 2] (fluent), [Language 3] (intermediate).}
+\item English (native).
 \end{itemize}
 
 % ============================================================
@@ -157,27 +138,7 @@ Thesis: ``[Thesis Title].'' [Brief description of research focus.]
 \section{Publications}
 \vspace{1pt}
 \begin{itemize}
-\item {[Author(s)] ([Year]). [Title]. [Journal/Conference]. \href{[DOI_URL]}{DOI link}}
-\end{itemize}
-
-% ============================================================
-%     HONORS AND AWARDS (optional)
-% ============================================================
-
-\section{Honors and Awards}
-\vspace{1pt}
-\begin{itemize}
-\item{\textbf{[Award Name]} -- [Event/Organization] ([Year]).}
-\end{itemize}
-
-% ============================================================
-%     REFERENCES
-% ============================================================
-
-\section{References}
-\vspace{1pt}
-\begin{itemize}
-\item{Available upon request.}
+\item Becker, R., et al. (2026, in preparation). Phenotypic: A Modular Python Image Analysis Framework for Microbial Phenotyping.
 \end{itemize}
 
 \end{document}

@@ -29,12 +29,13 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
   04-job-evaluation.md's Language Gate. -->
 - **CV language:** English
 
-- **Status:** Undergraduate researcher; BS Bioengineering candidate, expected June 2026
+- **Status:** BS in Bioengineering, University of California, Riverside (degree conferred June 12, 2026)
 - **LinkedIn headline:** "Undergraduate Researcher at University of California, Riverside"
 
 ### Education
 <!-- List your degrees, most recent first -->
-- **BS in Bioengineering and Biomedical Engineering** (2022-2026) - University of California, Riverside
+- **BS in Bioengineering** (2022-2026, degree conferred June 12, 2026) - University of California, Riverside
+  - Overall GPA: 3.27 (per official transcript). Not included on CVs or cover letters by default - only surface if a specific application explicitly requests GPA.
   - Topics: Fluid Dynamics, Bioinstrumentation, Control Systems, Biomechanics, Biotechnology, Biochemistry, Biomaterials, Tissue Engineering, Clinical Hematology, Immunology, Analytical & Clinical Chemistry, Medical Diagnostics, Biomedical Imaging, Data Analysis
 
 ### Professional Experience

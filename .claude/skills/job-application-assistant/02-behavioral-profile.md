@@ -8,47 +8,33 @@ framework_version: 1.0.0
 <!-- You can use results from PI, DISC, Myers-Briggs, StrengthsFinder, or a self-assessment -->
 
 ## Overview
-[YOUR_NAME]'s behavioral assessment identifies them as a **[PROFILE_TYPE]** pattern. [1-2 SENTENCE_SUMMARY].
-
-## Core Behavioral Drives
-
-| Drive | Level | Meaning |
-|-------|-------|---------|
-| [DRIVE_1] | [LEVEL] | [DESCRIPTION] |
-| [DRIVE_2] | [LEVEL] | [DESCRIPTION] |
-| [DRIVE_3] | [LEVEL] | [DESCRIPTION] |
-| [DRIVE_4] | [LEVEL] | [DESCRIPTION] |
+Richard's self-assessment identifies him as **progress-oriented and collaborative** - motivated by tangible, visible output (simulations, new drawings, new engineering approaches) and energized by working in a team, bouncing ideas off colleagues. *[Source: CLAUDE.md Behavioral Profile section, self-reported]*
 
 ## Strongest Behaviors
-- **[BEHAVIOR_1]:** [DESCRIPTION]
-- **[BEHAVIOR_2]:** [DESCRIPTION]
-- **[BEHAVIOR_3]:** [DESCRIPTION]
+- **Hands-on technical execution:** Demonstrated across fluidics, instrumentation, and computer vision work (e.g. the incubator hardware build, COMSOL modeling projects, the Phenotypic image-analysis pipeline).
+- **Fast iteration from idea to tangible result:** Consistently favors building and testing over prolonged planning - visible in the incubator project's iterative hardware revisions and the colony-detection pipeline's benchmarking cycles.
+- **Collaborative troubleshooting:** Regularly works with graduate researchers and presents progress to faculty mentors rather than working in isolation.
 
 ## How You Work Best
-- [ENVIRONMENT_PREFERENCE_1]
-- [ENVIRONMENT_PREFERENCE_2]
-- [ENVIRONMENT_PREFERENCE_3]
+- Team-based R&D/engineering environments with visible, iterative progress
+- Environments where output is tangible: simulations, prototypes, new engineering approaches, not purely administrative or reporting-heavy work
+- Settings that support bouncing ideas off colleagues rather than fully solo, siloed work
 
 ## Growth Areas (frame positively in applications)
-- **[AREA_1]:** [HOW_TO_FRAME_IT_POSITIVELY]
-- **[AREA_2]:** [HOW_TO_FRAME_IT_POSITIVELY]
+- **Not yet defined.** CLAUDE.md flags this explicitly as unresolved - update once feedback from interviews or performance reviews gives a concrete signal to frame positively. Do not invent a growth area for applications until this is filled in.
 
 ## Mapping to Job Posting Language
 
 When a job posting mentions these keywords, it's a **strong behavioral fit**:
-- [KEYWORD_OR_PHRASE_THAT_MATCHES_YOUR_STYLE]
-- [ANOTHER_KEYWORD]
+- "cross-functional collaboration", "team-based R&D", "hands-on", "iterative design/prototyping", "fast-paced", "bench-to-result"
 
 When a job posting mentions these, flag as **potential friction** (not deal-breaker):
-- [KEYWORD_OR_PHRASE_THAT_MIGHT_CLASH]
-- [ANOTHER_KEYWORD]
-
-## Management Style Preferences
-- [WHAT_MANAGEMENT_STYLE_WORKS_FOR_YOU]
-- [WHAT_DOESN'T_WORK]
+- Highly solo/independent-contributor roles with little team interaction
+- Roles that are primarily administrative, compliance-writing, or reporting-heavy with little hands-on build/test work
+- More than 50% travel (already tracked as a hard deal-breaker in CLAUDE.md, not just friction)
 
 ## Using This in Applications
-- **Cover letters:** [HOW_TO_WEAVE_IN_BEHAVIORAL_STRENGTHS]
-- **CV:** [WHAT_TO_EMPHASIZE]
-- **Interviews:** [WHAT_STAR_EXAMPLES_TO_USE]
-- **Don't overstate:** [WHAT_NOT_TO_CLAIM]
+- **Cover letters:** Lead with a concrete, hands-on example (a build, a debug, a pipeline) rather than an abstract claim of being a "team player" - this is consistent with the "demonstrate, don't state" rule in `03-writing-style.md`.
+- **CV:** Emphasize measurable, tangible outcomes (accuracy improvements, thermal range increases, dataset sizes) over responsibility lists.
+- **Interviews:** Use STAR examples that show iteration (try, fail, adjust, succeed) and collaboration with graduate researchers/faculty mentors.
+- **Don't overstate:** Richard has not yet worked in a formal industry team structure (all collaboration to date is academic/research-lab); frame team fit honestly as "collaborates well with research peers and mentors," not as proven industry team leadership.

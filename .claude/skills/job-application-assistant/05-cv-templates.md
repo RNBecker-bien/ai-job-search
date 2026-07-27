@@ -8,7 +8,7 @@ framework_version: 1.4.3
 
 ## Template: LaTeX moderncv (Banking Style)
 
-All CVs use the moderncv LaTeX package with the "banking" style and "blue" color scheme.
+All CVs use the moderncv LaTeX package with the "banking" style and a custom accent color, hex `#106103` (a dark green), overriding moderncv's `color1`.
 
 **Output file:** `cv/main_<company>_<role>.tex`
 **Compile with:** **lualatex** on MiKTeX/TeX Live. pdflatex often fails on modern MiKTeX installs with `fontawesome5` font-expansion errors; lualatex handles the same sources cleanly.
@@ -29,16 +29,18 @@ Expected output: `Output written on main_<company>_<role>.pdf (2 pages, ...)`. A
 \moderncvstyle{banking}
 \moderncvcolor{blue}
 
-% Force the name and section headings to render in moderncv blue (color1).
-% Default banking leaves them black: moderncvstylebanking.sty's \colorlet
-% copies (not aliases) the pre-scheme accent colour, so the name colours are
-% frozen before \moderncvcolor runs. Re-let them after. \namefont is the hook
-% every name-style macro routes through, so this also works on moderncv 2.3.1
-% (Debian/Ubuntu apt), which has no \firstnamestyle/\lastnamestyle at all.
-\renewcommand*{\namefont}{\fontsize{34}{36}\bfseries\upshape}
-\colorlet{firstnamecolor}{color1}
-\colorlet{lastnamecolor}{color1}
-\colorlet{namecolor}{color1}
+% Override moderncv's color1 (normally set to blue by \moderncvcolor{blue}
+% above) to the standard custom accent. This recolors everything that keys
+% off color1: name, section headings (via the renewcommands below), bullet
+% markers, and other banking-style accents.
+\usepackage{xcolor}
+\definecolor{color1}{HTML}{106103}
+
+% Force both first and last name AND section headings to render in the
+% custom accent color. Default banking on lualatex+MiKTeX leaves these black
+% without this override, which looks inconsistent with the rest of the scheme.
+\renewcommand*{\firstnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
+\renewcommand*{\lastnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
 \renewcommand*{\sectionstyle}[1]{{\sectionfont\color{color1}#1}}
 
 \usepackage[utf8]{inputenc}
@@ -49,9 +51,9 @@ Expected output: `Output written on main_<company>_<role>.pdf (2 pages, ...)`. A
 % through \PassOptionsToPackage instead, which is what removes that clash.
 \AtEndPreamble{\hypersetup{
     colorlinks=true,
-    linkcolor=blue,
+    linkcolor=color1,
     filecolor=magenta,
-    urlcolor=blue,
+    urlcolor=color1,
     pdftitle={[YOUR_NAME] - CV},
     % Keep pdfpagemode=UseNone: this block runs after moderncv's own
     % \AtEndPreamble (moderncv.cls sets pdfpagemode there), so a FullScreen
@@ -86,7 +88,7 @@ Expected output: `Output written on main_<company>_<role>.pdf (2 pages, ...)`. A
 
 ### Color overrides
 
-The `\renewcommand*` on `\namefont` and the three `\colorlet` lines in the preamble are required on lualatex+MiKTeX. Without them the name and section headings render in black even though `\moderncvcolor{blue}` is set, which looks inconsistent with the rest of the blue accent scheme (links, bullet markers, contact icons). The cause: `moderncvstylebanking.sty` defines the name colours with `\colorlet`, which *copies* the accent colour as it is before the scheme is applied, so the name colours are frozen to the pre-scheme value; re-assigning them with `\colorlet` after `\moderncvcolor{blue}` (as the preamble does) re-pins them to `color1`. `\namefont` is the shared hook every name-style macro routes through, so the block is version-agnostic - including moderncv 2.3.1 from Debian/Ubuntu apt, which has no `\firstnamestyle`/`\lastnamestyle` at all. Both names render bold; if you prefer regular weight, change `\bfseries` to `\mdseries` in the `\namefont` line (the weight now lives there, so it applies to the whole name). Don't drop the overrides - on most modern installs the defaults render visibly wrong.
+The `\definecolor{color1}{HTML}{106103}` line plus the three `\renewcommand*` lines in the preamble are required on lualatex+MiKTeX. Without the `\definecolor` override, `color1` stays whatever `\moderncvcolor{blue}` set it to; without the three `\renewcommand*` overrides, the firstname, lastname, and section headings render in black regardless of `color1`, which looks inconsistent with the rest of the accent scheme (links, bullet markers, contact icons - all of which already key off `color1` and pick up the redefinition automatically). Both names render bold; if you prefer the firstname in regular weight, change the firstnamestyle override from `\bfseries` to `\mdseries`. Don't drop either override - on most modern installs the defaults render visibly wrong. `106103` (dark green) is the standing default accent color for every CV going forward - only change it if the user explicitly asks for a different color for a specific application.
 
 ### Spacing inside itemize lists (important)
 
@@ -136,7 +138,40 @@ When the role sits outside your home domain, **lead with the domain-transfer arg
 **For [YOUR_SECONDARY_ROLE_TYPE] roles:**
 > [YOUR_PROFILE_STATEMENT_TEMPLATE_2]
 
-Statements labeled *[Used for: <company>_<role>]* were extracted from archived application drafts by `/setup` Path A. They are **phrasing references, never fact sources**: when drafting from one, every factual claim still comes from `01-candidate-profile.md` - a past tailored draft does not vouch for its own accuracy.
+**For fluidic/instrumentation engineering roles** *[Used for: illumina_engineer_1_fluidic_systems]*:
+> Bioengineering graduate (Jun 2026) with hands-on experience in fluidic systems design, microfluidic device modeling, and instrumentation development. Designed and implemented a tri-gas flow control system using solenoid valves and closed-loop feedback control, performed multi-sensor calibration, and executed systematic failure analysis including sensor drift correction, thermal fault mitigation, and leak integrity testing. Modeled microfluidic and physiological fluid flow using COMSOL Multiphysics across parametric studies comparing diseased and healthy flow conditions. Proficient in Python, MATLAB, and JMP for experimental data analysis and visualization.
+
+**For quality engineering roles** *[Used for: appliedmedical_quality_engineer_1]*:
+> Bioengineering graduate with hands-on experience in root cause analysis, failure investigation, statistical analysis, and protocol execution across hardware systems and analytical laboratory environments. Diagnosed and resolved multiple hardware failures through systematic investigation, corrective action implementation, and documented verification of corrections. Proficient in JMP, Python, and MATLAB for statistical data analysis and reporting. Experienced in maintaining accurate documentation of methods, deviations, and results in both research and engineering contexts.
+
+**For molecular biology / diagnostics research associate roles** *[Used for: billiontoone_research_associate]*:
+> Bioengineering graduate (June 2026) with hands-on laboratory research experience in molecular biology techniques including PCR, gel electrophoresis, and DNA purification, alongside recombinant protein expression and biomolecular characterization. Contributed to an open-source Python image analysis framework for over a year, building validated detection pipelines and applying quantitative statistical analysis to high-throughput image datasets. Experienced in maintaining accurate experimental records, documenting procedural deviations, and presenting findings to research teams. Manuscript in preparation from undergraduate research.
+
+**For quality control specialist roles** *[Used for: biorad_quality_control_specialist]*:
+> Bioengineering graduate (June 2026) with hands-on experience in quality control testing, analytical technique execution, and systematic root cause analysis. Performed gel electrophoresis, SDS-PAGE, Bradford assay quantification, and pH meter calibration across structured laboratory coursework with documented deviation tracking and data integrity practices. Resolved hardware failures through root cause investigation and corrective action implementation. Proficient in Python, MATLAB, and JMP for data analysis and reporting. Committed to Good Laboratory Practices and accurate batch documentation.
+
+**For analytical / process analytics research associate roles** *[Used for: biomarin_research_associate_process_analytics_services]*:
+> Bioengineering graduate (June 2026) with hands-on experience in analytical method execution, protein characterization, and GMP/GLP-aligned laboratory documentation. Performed UV/Vis spectrophotometric quantification, SDS-PAGE purity assessment, gel electrophoresis, FRET fluorescence spectroscopy, and affinity chromatography purification in a structured biotechnology laboratory setting. Calibrated analytical instruments against certified reference standards with documented acceptance criteria. Proficient in Python, MATLAB, and JMP for data analysis and reporting. Committed to data integrity, traceability, and accurate electronic record keeping.
+
+**For protein production / lab automation research associate roles** *[Used for: bighat_research_associate_cfps]*:
+> Bioengineering graduate (UC Riverside, June 2026) with hands-on experience in recombinant protein expression and purification, molecular biology techniques, and high-throughput laboratory automation. Built and validated computer vision pipelines processing hundreds of images across an automated microbial phenotyping workflow, work that translates directly to reagent QC and process consistency on a high-throughput platform. Organized, detail-oriented, and present research progress regularly to faculty mentors and peers.
+
+**For AI-forward bench science roles** *[Used for: anthropic_research_associate_biology]*:
+> Bioengineering graduate (June 2026) with hands-on experience in molecular biology and biochemistry including PCR, gel electrophoresis, plasmid preparation, bacterial cell culture, nucleic acid purification, recombinant protein expression and affinity purification, and quantitative fluorescence and absorbance-based assays. Contributed to an open-source Python image analysis framework for over a year, building validated detection pipelines and applying bioinformatics workflows including sequence alignment, FASTQ analysis, and variant identification. Manuscript in preparation from undergraduate research.
+> Note: the archived draft for this role also claimed regular use of "Claude" and "GitHub Copilot" as tools, tailored to a posting that explicitly asked for AI-tool enthusiasm. That claim is role-specific targeting, not a verified general profile fact - do not carry it into other CVs without checking it's true for that application at the time.
+
+**For device / implant design engineer roles** *[Used for: stryker_design_engineer_customized_implants]*:
+> Bioengineering graduate (UC Riverside, June 2026) with hands-on experience translating anatomical and physiological data into validated 3D models. Built parametric 3D simulations in COMSOL Multiphysics across microfluidic and physiological geometries, and co-designed and iteratively prototyped a mechanical hardware system through multiple design revisions. Combines this 3D design foundation with direct experience evaluating and segmenting biomedical image data, coursework in biomechanics, biomaterials, and tissue engineering, and a track record of cross-functional collaboration with graduate researchers and faculty.
+
+**For computational biology / imaging-and-ML roles** *[Used for: axiombio_computational_scientist_biology]*:
+> Bioengineering graduate (UC Riverside, June 2026) with over a year of hands-on experience building computer vision pipelines for high-throughput microbial phenotyping, directly relevant to high-content imaging analysis and morphology profiling. Built and validated image-based phenotype detection pipelines (Python, OpenCV, scikit-image, ImageJ) against a 200+ image ground-truth dataset, improving colony detection accuracy by approximately 40% over SGATools and Iris through systematic parameter optimization and benchmarking. Applies clustering, regression, and multivariate statistical analysis to extract biological signal from noisy, high-dimensional datasets, and is currently extending this pipeline with LLM-assisted parameter optimization to automate image-processing workflow configuration. Combines this computational foundation with wet-lab molecular biology experience and hands-on physiological fluid-flow modeling of hepatic and other organ systems to bridge experimental design and computational analysis of human biology.
+> Note: "graduate" phrasing corrected here from the archived draft's "student, degree expected June 2026" - at the time that CV was drafted, the profile still described graduation as pending; the official transcript later confirmed the degree was conferred June 12, 2026.
+
+**For lab automation / controls engineering roles** *[Used for: natera_laboratory_automation_engineer]*:
+> Bioengineering graduate (UC Riverside, June 2026) with hands-on experience building embedded automation systems and computer vision pipelines for high-throughput laboratory workflows. Co-designed a mammalian cell culture incubator with closed-loop temperature, tri-gas, and lighting control on dual Arduino microcontrollers, then diagnosed and resolved sensor drift, thermal-runaway risk, and a chamber leak through systematic root-cause troubleshooting. Built and validated Python-based image analysis pipelines automating colony detection across a 200+ image dataset, improving accuracy by approximately 40% through parameter optimization and benchmarking against existing tools. Applies Good Laboratory Practice standards to instrument calibration and documentation, and collaborates closely with faculty mentors and fellow researchers on engineering projects.
+> Note: same graduation-status correction as above applied to this template.
+
+Statements labeled *[Used for: <company>_<role>]* were extracted from archived application drafts by `/setup` Path A. They are **phrasing references, never fact sources**: when drafting from one, every factual claim still comes from `01-candidate-profile.md` - a past tailored draft does not vouch for its own accuracy. Numbers or specifics that appeared in an archived draft but are not grounded in `01-candidate-profile.md` (e.g., dataset-size figures that drifted between drafts) have been dropped from these templates - only the framing language was kept.
 
 ### Core Competencies / Skills Section (Best Practice)
 Reorder and emphasize based on the role. Use bold category labels.

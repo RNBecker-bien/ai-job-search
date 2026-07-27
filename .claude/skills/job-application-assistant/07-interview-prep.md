@@ -39,6 +39,58 @@ Keep answers to 1-2 minutes. Be specific. End with what you learned or would do 
 
 <!-- Add more STAR examples as needed. Aim for 4-6 covering different competencies. -->
 
+## STAR Candidates (Complete Manually)
+
+### Colony detection accuracy improvement (Phenotypic framework)
+**Source:** CV / Research experience - Undergraduate Research Assistant, UCR
+**What happened:** Improved colony detection accuracy by ~40% over SGATools and Iris through dataset curation, parameter optimization, and benchmarking against a 200+ image ground-truth dataset.
+**Why it matters:** Technical problem-solving, data-driven iteration, benchmarking rigor
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### TEC thermal-runaway root cause and mitigation (Cell Culture Incubator project)
+**Source:** CV / Independent Project - Cell Culture Incubator and Environmental Stress Simulator
+**What happened:** Identified risk of thermal runaway from a faulty TEC module and implemented PWM power limiting as an immediate mitigation.
+**Why it matters:** Failure analysis, root-cause troubleshooting, hands-on hardware debugging
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### CO2 sensor drift root cause and nitrogen-purge recalibration (Cell Culture Incubator project)
+**Source:** Cover letter drafts (Applied Medical, Bio-Rad) / Independent Project - Cell Culture Incubator and Environmental Stress Simulator
+**What happened:** Diagnosed CO2 sensor drift, traced the root cause to atmospheric calibration offset, and implemented a nitrogen-purge recalibration protocol to correct it.
+**Why it matters:** Root cause analysis, corrective action design, sensor calibration
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### Incubator chamber leak diagnosis and fix (Cell Culture Incubator project)
+**Source:** Cover letter draft (Bio-Rad) / Independent Project - Cell Culture Incubator and Environmental Stress Simulator
+**What happened:** Located a chamber leak in the incubator system and verified the fix before returning the system to service.
+**Why it matters:** Systematic troubleshooting, hands-on hardware diagnosis, verification discipline
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### Tri-gas closed-loop control system design (Cell Culture Incubator project)
+**Source:** CV / Independent Project - Cell Culture Incubator and Environmental Stress Simulator
+**What happened:** Designed and implemented a tri-gas (CO2, O2, N2) flow regulation system using solenoid valves and closed-loop feedback control, comparing real-time sensor readings against setpoints.
+**Why it matters:** Instrumentation and control system design, sensor calibration, systems-level engineering
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
 ## Common Tough Questions
 
 ### "Why did you leave [previous company]?"
