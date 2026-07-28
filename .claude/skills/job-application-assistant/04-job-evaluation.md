@@ -30,6 +30,18 @@ If the candidate's permit also constrains *hours* or *start date* (a student vis
 
 A role that fails this gate is not scored and not drafted. Everything below applies only to roles that pass it.
 
+## Employer Type & Experience Gate — run before scoring
+
+Two more hard filters, applied the same way as the eligibility gate above: fail either one and the role is not scored and not drafted, regardless of skills fit.
+
+1. **Industry only.** The employer must not be a university, college, or academic research institution. Roles at academic medical centers advertised primarily as clinical/hospital positions (not university faculty/lab positions) are not automatically excluded by this rule, but check carefully - a posting hosted under a university's own job board is excluded even if the work is applied research.
+2. **Entry-level only.** Fail the role if it:
+   - States a minimum experience requirement above 3 years, or
+   - Requires a Master's degree or PhD as a stated minimum qualification (noted as "preferred" rather than required does not fail this gate, but should be called out as a stretch factor), or
+   - Uses a seniority-implying title (Senior, Principal, Staff, Director, Lead) with no entry-level track offered alongside it.
+
+Report a gate failure to the user the same way as an eligibility failure - state which of the two rules it tripped and quote the relevant line from the posting - rather than silently dropping it.
+
 ## Scoring Dimensions
 
 Evaluate each job posting against these five dimensions:

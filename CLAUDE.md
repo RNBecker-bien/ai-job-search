@@ -51,11 +51,11 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ### Publications
 <!-- List peer-reviewed publications, if any -->
-- Becker, R., et al. (2026, in preparation). Phenotypic: A Modular Python Image Analysis Framework for Microbial Phenotyping.
+- Nguyen, A., Ottum, E., Becker, R., et al. (2026, in preparation). Phenotypic: A Modular Python Image Analysis Framework for Microbial Phenotyping. (First author: Alex Nguyen; Richard is a contributing co-author, not first author.)
 
 ### Awards
 <!-- List relevant awards, hackathons, competitions -->
-- None currently on record - update as earned
+- Dean's Honors List, University of California, Riverside (Winter 2025, Spring 2025, Fall 2025)
 
 ### Behavioral Profile
 <!-- Your behavioral assessment results (PI, DISC, Myers-Briggs, or self-assessment) -->

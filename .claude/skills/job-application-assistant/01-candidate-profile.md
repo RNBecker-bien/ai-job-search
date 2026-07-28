@@ -90,7 +90,7 @@ Department of Chemical and Environmental Engineering, UCR Bourns College of Engi
 
 ## Publications
 <!-- List peer-reviewed publications, if any -->
-1. Becker, R., et al. (2026, in preparation). Phenotypic: A Modular Python Image Analysis Framework for Microbial Phenotyping.
+1. Nguyen, A., Ottum, E., Becker, R., et al. (2026, in preparation). Phenotypic: A Modular Python Image Analysis Framework for Microbial Phenotyping.
 
 ## Awards
 - Dean's Honors List, University of California, Riverside (Winter 2025, Spring 2025, Fall 2025)
