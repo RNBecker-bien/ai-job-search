@@ -13,8 +13,8 @@ The `site:` query templates in this file are the **WebSearch fallback** — for 
 ## Search Sites
 
 Primary (portal CLIs installed under `.agents/skills/` — `/scrape` runs these directly, no `site:` query needed):
-- **greenhouse-search** — BillionToOne, Natera, Twist Bioscience (public Greenhouse JSON API)
-- **workday-search** — Biogen, Amgen, Abbott, Genentech (public Workday CXS JSON API)
+- **greenhouse-search** — BillionToOne, Natera, Twist Bioscience, Amyris (public Greenhouse JSON API)
+- **workday-search** — Biogen, Amgen, Abbott, Genentech, Pfizer, Novartis, Vertex Pharmaceuticals, Regeneron, Resilience, Neurocrine Biosciences, Baxter, BioCryst Pharmaceuticals (public Workday CXS JSON API)
 - **linkedin-search** / **freehire-search** — general-purpose, country-agnostic
 
 Secondary (no CLI available — WebSearch `site:` fallback):
@@ -27,8 +27,12 @@ Secondary (no CLI available — WebSearch `site:` fallback):
   - Cedars-Sinai — careers.cshs.org, ATS platform unconfirmed
   - Avid Bioservices — Jobvite-hosted (jobs.jobvite.com/avidbio/jobs), server-rendered HTML, no JSON API found
   - Eli Lilly — Workday-hosted but its CXS API rejects requests outright (see `.agents/skills/workday-search/url-reference.md`)
-  - Quest Diagnostics — Oracle Cloud HCM (careers.questdiagnostics.com), no public JSON API identified
+  - Quest Diagnostics, Cellectis — Oracle Cloud HCM, no public JSON API identified
+  - AbbVie — SmartRecruiters-hosted (careers.smartrecruiters.com/abbvie), not yet integrated as a CLI
+  - Acadia Pharmaceuticals — custom career site (acadia.com/en-us/careers/job-board), no ATS platform identified
+  - AccelBio, Advion, Bedrock Therapeutics — small/early-stage companies, no formal ATS found (direct-apply or email-based)
   - BioMarin, Axiom Bio, and similar biomedical device/diagnostics/genomics companies
+  - Novan — defunct as of 2025 (Chapter 11 bankruptcy 2023, assets sold to Ligand Pharmaceuticals, now in liquidation); not a viable employer, do not search
 
 ## Query Categories
 
@@ -109,6 +113,19 @@ When evaluating results, verify the job location fits your preferences. Define a
 ## Language Filter
 
 Your working languages and levels are in CLAUDE.md's Languages table. When filtering scraped results, apply `04-job-evaluation.md`'s Language Gate: a posting requiring a language you haven't declared at all is excluded; a posting requiring a higher level than you declared in a language you do work in is not excluded, flag it clearly instead (see `job-scraper/SKILL.md`'s Step 3 "Quick Fit Assessment" for how the flag surfaces in `/scrape` output). Postings simply *written* in a language you don't work in, that don't require it on the job, are fine.
+
+## Employer Type Filter
+
+**Industry only - exclude universities and academic institutions entirely.** Do not present postings at universities, colleges, or academic research institutions (e.g. Duke University, Northwestern University, NC State University), regardless of fit score. This applies to `/scrape` presentation, `/rank` candidate selection, and any other workflow that surfaces jobs from `seen_jobs.json` - a university posting should never reach the user as a live option.
+
+## Experience & Degree Filter
+
+**Strictly entry-level: 2-3 years of experience maximum, no advanced degree requirement.** Exclude any posting that:
+- States a minimum experience requirement above 3 years (e.g. "5+ years", "3-5 years" where the floor exceeds 3)
+- Requires a Master's degree or PhD as a stated minimum qualification (a Master's/PhD listed as "preferred" rather than required is fine to keep, but flag it)
+- Uses a seniority-implying title without an entry-level track explicitly offered (e.g. "Senior Scientist", "Principal Engineer", "Director") - unless the posting explicitly states a "II" or higher is one of several open levels alongside an entry-level "I" track
+
+This is a hard filter, not just a scoring input - a posting that fails it should not be presented, regardless of how well its skills match.
 
 ## Date Filter
 

@@ -46,6 +46,18 @@ Judge the level comparison the same way you judge everything else in this framew
 
 **Worked example:** a candidate whose Languages table lists Spanish (Native) and English (B1/B2). A posting requiring "fluent Russian" → **FAIL**, Russian isn't declared at all. A posting requiring "fluent English" → **FLAG**, English is declared but "fluent" plausibly exceeds B1/B2 — score and draft the application, but tell the candidate this posting's bar may be a stretch and let them decide. A posting requiring "conversational English" or unspecified English → **PASS**, B1/B2 clears a "conversational" bar cleanly.
 
+## Employer Type & Experience Gate — run before scoring
+
+Two more hard filters, applied the same way as the eligibility gate above: fail either one and the role is not scored and not drafted, regardless of skills fit.
+
+1. **Industry only.** The employer must not be a university, college, or academic research institution. Roles at academic medical centers advertised primarily as clinical/hospital positions (not university faculty/lab positions) are not automatically excluded by this rule, but check carefully - a posting hosted under a university's own job board is excluded even if the work is applied research.
+2. **Entry-level only.** Fail the role if it:
+   - States a minimum experience requirement above 3 years, or
+   - Requires a Master's degree or PhD as a stated minimum qualification (noted as "preferred" rather than required does not fail this gate, but should be called out as a stretch factor), or
+   - Uses a seniority-implying title (Senior, Principal, Staff, Director, Lead) with no entry-level track offered alongside it.
+
+Report a gate failure to the user the same way as an eligibility failure - state which of the two rules it tripped and quote the relevant line from the posting - rather than silently dropping it.
+
 ## Scoring Dimensions
 
 Evaluate each job posting against these five dimensions:

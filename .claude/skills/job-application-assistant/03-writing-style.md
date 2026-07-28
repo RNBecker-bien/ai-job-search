@@ -16,6 +16,8 @@ framework_version: 1.2.0
    - **Flag it:** Combining academic + industry experience into a single claim that implies it was all industry; describing work using the posting's specific terminology when the actual work was adjacent but not the same.
    - **Never:** Claiming experience the candidate doesn't have; implying they worked in a domain they haven't.
    When a bullet falls in the "flag it" zone, present it to the user after drafting with: "This bullet is a stretch because X. Keep, soften, or drop?" If the evaluation experience match score is below 50, warn before proceeding to drafting that extensive reframing would be needed.
+7. **Chemical formulas use LaTeX subscripts.** CO$_2$, O$_2$, N$_2$, and any other chemical formula with a numeric subscript must be typeset with LaTeX math-mode subscripts (`CO$_2$`, not `CO2`), in every CV and cover letter going forward. This applies only to files being actively drafted or not yet submitted - never retroactively edit the live `cv/main_*.tex` or `cover_letters/cover_*.tex` file for an application that has already been turned in.
+8. **Temperatures use a degree symbol.** Write `25$^{\circ}$C`, not `25C`, in every CV and cover letter going forward. Same scope restriction as Rule 7: unsubmitted/future files only, never retroactive on already-submitted applications.
 
 ## Tone
 - **Warm but direct.** Friendly and approachable, but confident without arrogance.

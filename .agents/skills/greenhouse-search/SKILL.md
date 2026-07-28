@@ -2,14 +2,15 @@
 name: greenhouse-search
 version: 1.0.0
 description: >
-  Use this skill to search live job listings at BillionToOne, Natera, and Twist
-  Bioscience — biomedical/diagnostics/genomics companies that host their careers
-  page on Greenhouse — via Greenhouse's public JSON job-board API. Covers all
-  three with one CLI (extensible to more Greenhouse-hosted companies by editing
-  a registry file). Trigger phrases: BillionToOne jobs, Natera jobs, Natera
-  careers, Twist Bioscience jobs, Twist Bioscience careers, Greenhouse job board,
+  Use this skill to search live job listings at BillionToOne, Natera, Twist
+  Bioscience, and Amyris — biomedical/diagnostics/genomics/synthetic-biology
+  companies that host their careers page on Greenhouse — via Greenhouse's
+  public JSON job-board API. Covers all four with one CLI (extensible to more
+  Greenhouse-hosted companies by editing a registry file). Trigger phrases:
+  BillionToOne jobs, Natera jobs, Natera careers, Twist Bioscience jobs,
+  Twist Bioscience careers, Amyris jobs, Amyris careers, Greenhouse job board,
   molecular diagnostics jobs, prenatal testing jobs, genomics company jobs,
-  DNA synthesis jobs, cell-free DNA jobs.
+  DNA synthesis jobs, cell-free DNA jobs, synthetic biology jobs.
 context: fork
 enabled: true  # set to false to keep this portal installed but have /scrape skip it
 allowed-tools: Bash(bun run .agents/skills/greenhouse-search/cli/src/cli.ts *)
@@ -19,13 +20,13 @@ allowed-tools: Bash(bun run .agents/skills/greenhouse-search/cli/src/cli.ts *)
 
 Search live job listings from Greenhouse's public Job Board API
 (`boards-api.greenhouse.io`) across a fixed registry of target companies —
-currently **BillionToOne**, **Natera**, and **Twist Bioscience**. No
-authentication needed; this is a genuinely public, unauthenticated JSON API,
-not a scrape.
+currently **BillionToOne**, **Natera**, **Twist Bioscience**, and **Amyris**.
+No authentication needed; this is a genuinely public, unauthenticated JSON
+API, not a scrape.
 
 ## When to use this skill
 
-- Search open roles at BillionToOne, Natera, or Twist Bioscience by keyword
+- Search open roles at BillionToOne, Natera, Twist Bioscience, or Amyris by keyword
 - Filter by location (e.g. California, remote)
 - Filter by recency (posted/updated within N days)
 - Get the full description of a specific posting
@@ -39,7 +40,7 @@ bun run .agents/skills/greenhouse-search/cli/src/cli.ts search [flags]
 ```
 
 Key flags:
-- `--company <slug>` / `-c <slug>` — `billiontoone`, `natera`, `twistbioscience`, or `all` (default). Omit to search all three.
+- `--company <slug>` / `-c <slug>` — `billiontoone`, `natera`, `twistbioscience`, `amyrisinc`, or `all` (default). Omit to search all four.
 - `--query <text>` / `-q <text>` — keyword filter on job title (substring match)
 - `--location <text>` / `-l <text>` — location filter (substring match, e.g. `California`, `Remote`, `Menlo Park`)
 - `--jobage <days>` — only postings updated within N days
@@ -65,7 +66,7 @@ URL. Returns the full HTML-stripped description and posting metadata.
 ## Usage examples
 
 ```bash
-# Quality/test engineering roles across all three companies
+# Quality/test engineering roles across all four companies
 bun run .agents/skills/greenhouse-search/cli/src/cli.ts search -q "quality" --format table
 
 # Everything open at Natera in California
@@ -103,4 +104,5 @@ Edit `.agents/skills/greenhouse-search/cli/src/companies.ts` and add
 - Data is from the public `boards-api.greenhouse.io` API — no credentials required.
 - Job ids are composite (`<company-slug>:<job-id>`) so `search --company all` results stay unambiguous when passed to `detail`.
 - `date` reflects the posting's `updated_at` (falls back to `first_published`).
-- Registry currently covers `billiontoone`, `natera`, `twistbioscience` — companies confirmed to run their careers page on Greenhouse as of 2026-07-22. Applied Medical, Cedars-Sinai, and Quest Diagnostics were checked and do **not** use Greenhouse; they're covered by the WebSearch `site:` fallback in `.claude/skills/job-scraper/search-queries.md` instead.
+- Registry currently covers `billiontoone`, `natera`, `twistbioscience` (confirmed 2026-07-22) and `amyrisinc` (confirmed 2026-07-27) — companies confirmed to run their careers page on Greenhouse. Applied Medical, Cedars-Sinai, and Quest Diagnostics were checked and do **not** use Greenhouse; they're covered by the WebSearch `site:` fallback in `.claude/skills/job-scraper/search-queries.md` instead.
+- Amyris emerged from Chapter 11 bankruptcy in May 2024 and is still stabilizing financially as of 2026 — its Greenhouse board is live and hiring, but factor that history into any application decision.

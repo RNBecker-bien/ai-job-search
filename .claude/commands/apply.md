@@ -55,6 +55,26 @@ Present the evaluation to the user with:
 After presenting the evaluation, ask the user:
 > "Should I proceed with drafting the CV and cover letter for this role?"
 
+**Record in `job_scraper/seen_jobs.json` regardless of the user's answer.** `/apply` is a discovery path just like `/scrape` and `/rank`, and every job a user looks at through it should land in the same shared dedup store so it is never re-surfaced or re-evaluated later. Read the file (create with `{"seen": {}}` if missing), then add or update an entry keyed by the posting URL:
+
+```json
+{
+  "title": "<role title>",
+  "company": "<company>",
+  "url": "<posting URL>",
+  "first_seen": "YYYY-MM-DD",
+  "fit": "high" | "medium" | "low",
+  "status": "evaluated" | "skipped",
+  "portal": "manual (/apply)",
+  "rank_score": <overall score from this evaluation>,
+  "rank_verdict": "<verdict band>",
+  "rank_date": "YYYY-MM-DD",
+  "notes": "<one line: why skipped, or that the user proceeded to drafting>"
+}
+```
+
+Use `status: "skipped"` if the user declines or a hard gate/deal-breaker fails; use `status: "evaluated"` if they proceed to Step 2 (Step 6 does not need to touch this record again - `evaluated` already reflects that drafting happened). If the posting came in as pasted text with no URL, key the entry on `"<company> - <role title>"` instead, matching the composite-key convention `/scrape` uses for URL-less sources.
+
 **If the user says no, stop here.** If yes, continue to Step 2.
 
 ---

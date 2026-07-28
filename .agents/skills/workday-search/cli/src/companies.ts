@@ -22,6 +22,18 @@ export const COMPANIES: CompanyEntry[] = [
   { slug: "amgen", label: "Amgen", subdomain: "amgen", wd: "wd1", tenant: "amgen", site: "Careers" },
   { slug: "abbott", label: "Abbott", subdomain: "abbott", wd: "wd5", tenant: "abbott", site: "abbottcareers" },
   { slug: "genentech", label: "Genentech", subdomain: "roche", wd: "wd3", tenant: "roche", site: "ROG-A2O-GENE" },
+  { slug: "pfizer", label: "Pfizer", subdomain: "pfizer", wd: "wd1", tenant: "pfizer", site: "PfizerCareers" },
+  { slug: "novartis", label: "Novartis", subdomain: "novartis", wd: "wd3", tenant: "novartis", site: "Novartis_Careers" },
+  // "vertexinc.wd1.myworkdayjobs.com/VertexInc" also resolves but is the
+  // unrelated tax-software company Vertex Inc, not Vertex Pharmaceuticals —
+  // don't swap the tenant below for that one.
+  { slug: "vertex", label: "Vertex Pharmaceuticals", subdomain: "vrtx", wd: "wd501", tenant: "vrtx", site: "Vertex_Careers" },
+  { slug: "regeneron", label: "Regeneron", subdomain: "regeneron", wd: "wd1", tenant: "regeneron", site: "Careers" },
+  { slug: "resilience", label: "Resilience", subdomain: "resilience", wd: "wd1", tenant: "resilience", site: "Resilience_Careers" },
+  { slug: "neurocrine", label: "Neurocrine Biosciences", subdomain: "neurocrine", wd: "wd5", tenant: "neurocrine", site: "Neurocrinecareers" },
+  { slug: "baxter", label: "Baxter", subdomain: "baxter", wd: "wd1", tenant: "baxter", site: "baxter" },
+  { slug: "biocryst", label: "BioCryst Pharmaceuticals", subdomain: "biocryst", wd: "wd501", tenant: "biocryst", site: "External" },
+  { slug: "jnj", label: "Johnson & Johnson", subdomain: "jj", wd: "wd5", tenant: "jj", site: "jj" },
 ]
 
 export function findCompany(slug: string): CompanyEntry | undefined {
