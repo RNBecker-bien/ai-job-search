@@ -31,7 +31,7 @@ Secondary (no CLI available — WebSearch `site:` fallback):
   - AbbVie — SmartRecruiters-hosted (careers.smartrecruiters.com/abbvie), not yet integrated as a CLI
   - Acadia Pharmaceuticals — custom career site (acadia.com/en-us/careers/job-board), no ATS platform identified
   - AccelBio, Advion, Bedrock Therapeutics — small/early-stage companies, no formal ATS found (direct-apply or email-based)
-  - BioMarin, Axiom Bio, and similar biomedical device/diagnostics/genomics companies
+  - BioMarin, Axiom Bio, Siemens Healthineers, and similar biomedical device/diagnostics/genomics companies
   - Novan — defunct as of 2025 (Chapter 11 bankruptcy 2023, assets sold to Ligand Pharmaceuticals, now in liquidation); not a viable employer, do not search
 
 ## Query Categories

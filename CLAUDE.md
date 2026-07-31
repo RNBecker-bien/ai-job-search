@@ -81,7 +81,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ### Target Sectors
 <!-- Industries and companies you're targeting -->
-- Biomedical devices / diagnostics / genomics: Illumina, Bio-Rad, Agilent, BillionToOne, Natera, Applied Medical, BioMarin Pharmaceutical, Biogen, Amgen, Cedars-Sinai, Avid Bioservices, Twist Bioscience, Axiom Bio, Eli Lilly, Abbott, Quest Diagnostics, Genentech, and similar companies
+- Biomedical devices / diagnostics / genomics: Illumina, Bio-Rad, Agilent, BillionToOne, Natera, Applied Medical, BioMarin Pharmaceutical, Biogen, Amgen, Cedars-Sinai, Avid Bioservices, Twist Bioscience, Axiom Bio, Eli Lilly, Abbott, Quest Diagnostics, Genentech, Siemens Healthineers, and similar companies
 - Robotics / automation (secondary interest, adjacent to biomedical instrumentation)
 
 ### Deal-breakers
