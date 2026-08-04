@@ -72,9 +72,9 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** [YOUR_PRIMARY_SKILLS]
-**Moderate match areas:** [YOUR_SECONDARY_SKILLS]
-**Weak match areas:** [SKILLS_YOU_LACK]
+**Strong match areas:** Python (NumPy, pandas, OpenCV, scikit-image), MATLAB, computer vision/image segmentation, COMSOL Multiphysics, Arduino/embedded control systems, fluidic and microfluidic systems, bioinstrumentation
+**Moderate match areas:** Git/GitHub, ImageJ/FIJI, JMP, LabView (basic), general molecular biology/wet-lab technique (PCR, cell culture, protein purification, chromatography), statistical analysis
+**Weak match areas:** Regulated-industry QMS/GMP experience, CAD (SolidWorks or equivalent), NGS/long-read sequencing platforms, compiled languages (C/C++, C#, Java), any industry (non-academic) lab experience
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for? Match on the function and nature of the work performed, not the literal job title - a "Data Consultant" and a "Data Scientist" role can be functionally identical.
@@ -86,9 +86,9 @@ Does work history align with what they're looking for? Match on the function and
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** [YOUR_DIRECT_EXPERIENCE_DOMAINS]
-**Moderate:** [YOUR_ADJACENT_EXPERIENCE]
-**Entry-level:** [ROLES_WITH_LIMITED_EXPERIENCE]
+**Strong:** Computer vision/image analysis pipelines, bioinstrumentation and embedded control systems, microfluidic/fluid-dynamics modeling
+**Moderate:** Molecular biology bench technique, quality control/data integrity workflows (GLP-based), automation/controls engineering
+**Entry-level:** All roles are entry-level by definition (see Employer Type & Experience Gate above) - candidate has ~2 years of academic research experience, no industry lab experience yet. This is the recurring gap flagged in the calibration section below.
 
 ### 3. Behavioral/Culture Fit (0-100)
 Does the role and company culture match the behavioral profile?
@@ -119,19 +119,19 @@ Does this role advance career goals and contain tasks that energize?
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- [YOUR_CAREER_GOAL_1]
-- [YOUR_CAREER_GOAL_2]
-- [YOUR_CAREER_GOAL_3]
+- Break into industry (biomedical devices/diagnostics/genomics R&D) after graduating, converting academic research experience into a first industry role
+- Build hands-on engineering/R&D experience with visible, tangible output (simulations, prototypes, validated pipelines) rather than administrative or pure-compliance work
+- Grow toward robotics/automation-adjacent biomedical engineering work as a secondary long-term interest
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: [YOUR_ENERGIZING_TASKS]
-- Tasks that drain: [YOUR_DRAINING_TASKS]
+- Tasks that energize: Simulations, new drawings/designs, new engineering approaches, hands-on build-test-iterate cycles, collaborating with a team and bouncing ideas off colleagues, work that visibly contributes to healthcare/medicine
+- Tasks that drain: Purely administrative, compliance-writing, or reporting-heavy work with little hands-on build/test component; highly solo/siloed roles with minimal team interaction
 - Non-task factors: leadership style, department culture, company values, degree of autonomy
 
 **Life situation alignment:** Consider personal constraints:
-- **Security**: [YOUR_FINANCIAL_SITUATION_CONTEXT]
-- **Flexibility**: [YOUR_SCHEDULE_CONSTRAINTS]
-- **Professional development**: [YOUR_GROWTH_PRIORITIES]
+- **Security**: Hard salary floor of $70,000 (deal-breaker, see CLAUDE.md) - candidate is graduating (degree conferred June 12, 2026) and needs a stable industry entry point
+- **Flexibility**: Max 50% travel (hard deal-breaker); open to relocation within a defined set of regions (California Carmel-Sonoma corridor or San Diego; Chicago, Boston, New York, Raleigh within ~50 miles; remote OK) - see Location field in `01-candidate-profile.md`
+- **Professional development**: Priority is converting academic-only research experience into recognized industry experience; secondary priority is deepening automation/robotics and CAD skills, which are current gaps
 
 ### 6. Salary Benchmark (Optional)
 
@@ -245,11 +245,13 @@ consumer benefits.
 
 ## Calibration from Past Applications
 
-- **3 applications now have final outcomes, all rejections, none reaching an interview:**
+- **4 applications now have final outcomes, all rejections, none reaching an interview:**
   - **Illumina - Engineer I, Fluidic Systems** (entry-level fluidics/instrumentation role): rejected before interview (2026-05-30).
   - **Applied Medical - Quality Engineer I**: rejected before interview (2026-07-17).
-  - **BillionToOne - Research Associate**: advanced to a skills assessment before being rejected (2026-07-02) - the furthest progress of the three, suggesting some real traction even though it did not convert.
-- **Emerging pattern (n=3, watch for repetition):** entry-level fluidics/QC/bench-science roles at established medtech and diagnostics companies have not converted past initial screening despite moderate-to-good fit scores (55-70 range). Possible driver: academic-only bench experience vs. the industry lab experience these roles often screen for. Not yet strong enough to change scoring weights, but worth flagging to the user if a 4th similar rejection lands.
+  - **BillionToOne - Research Associate**: advanced to a skills assessment before being rejected (2026-07-02) - the furthest progress of the four, suggesting some real traction even though it did not convert.
+  - **Natera - Laboratory Automation Engineer**: rejected before interview (2026-07-29), fit score 62.3/100 - exact degree match but flagged going in for a gap on robotic workcell/liquid-handling platform experience and the posting's stated 2+ years of lab automation engineering experience. Generic rejection language, no specific feedback given.
+- **Confirmed pattern (n=4 - the threshold this note was watching for):** entry-level fluidics/QC/automation/bench-science roles at established medtech, diagnostics, and genomics companies have not converted past initial screening despite moderate-to-good fit scores (55-70 range). All four postings named a specific years-of-experience or hands-on-platform requirement (industry lab experience, robotic workcell/liquid-handling platforms, etc.) that the candidate's profile met on paper but only with academic rather than industry exposure.
+- **Decision (2026-08-03):** discussed with the candidate - continuing to apply broadly rather than narrowing scope or reweighting scoring for this role cluster. Do not down-weight the "industry vs. academic experience" gap in scoring based on this pattern alone; BillionToOne shows the profile can pass initial screening. Revisit this decision if the pattern continues past ~6-8 resolved rejections in this cluster.
 
 ## Weighting
 - Technical Skills: 30%

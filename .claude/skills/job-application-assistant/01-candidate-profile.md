@@ -15,7 +15,7 @@ framework_version: 1.1.1
 - **LinkedIn:** https://www.linkedin.com/in/richardnbecker
 - **GitHub:** https://github.com/RNBecker-bien
 - **Status:** BS in Bioengineering, University of California, Riverside (degree conferred June 12, 2026)
-- **Constraints:** [YOUR_COMMUTE_OR_LOCATION_CONSTRAINTS]
+- **Constraints:** Max 50% travel; $70,000 salary baseline (both hard deal-breakers - see Location above and Career Goals in `04-job-evaluation.md`)
 
 ### Languages
 <!-- Every language you can work in professionally, with your honest level. Used by the
@@ -94,6 +94,8 @@ Department of Chemical and Environmental Engineering, UCR Bourns College of Engi
 
 ### Certifications
 - UCR Library Summer Robotics Camp
+- MATLAB Onramp (MathWorks)
+- Minitab Beginner Certification (AIGPE) - completed 2026-08-03
 - TestGorilla Skill Assessment: Analyzing Data - 99th percentile
 - TestGorilla Skill Assessment: Problem Solving - 96th percentile
 
