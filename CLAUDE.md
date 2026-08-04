@@ -18,7 +18,15 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 ### Identity
 - **Name:** Richard Becker
 - **Location:** Riverside, California, USA (open to relocating anywhere in California between Carmel and Sonoma, or San Diego; also open to Chicago IL, Boston MA, New York NY, and Raleigh NC, including within ~50 miles of each; remote OK; max 50% travel)
-- **Languages:** English (native)
+- **Languages:**
+  | Language | Level |
+  |----------|-------|
+  | English | Native |
+  <!-- Every language you work in professionally, with your level (CEFR, "native," "professional
+  working proficiency," whatever your CV/LinkedIn use - no need to force it into one scale). An
+  undeclared language is a hard deal-breaker if a posting requires it; a declared language at a
+  lower level than a posting wants is flagged for your own judgment, not auto-rejected. See
+  04-job-evaluation.md's Language Gate. -->
 - **CV language:** English
 
 - **Status:** BS in Bioengineering, University of California, Riverside (degree conferred June 12, 2026)
@@ -77,7 +85,8 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 - Robotics / automation (secondary interest, adjacent to biomedical instrumentation)
 
 ### Deal-breakers
-<!-- Hard constraints on job search -->
+<!-- Hard constraints on job search. Language requirements are handled separately and
+automatically from your Languages table above - don't duplicate them here. -->
 - More than 50% travel
 - Below $70,000 salary baseline
 

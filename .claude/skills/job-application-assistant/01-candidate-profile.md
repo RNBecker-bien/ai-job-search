@@ -1,5 +1,5 @@
 ---
-framework_version: 1.0.0
+framework_version: 1.1.1
 ---
 
 # Candidate Profile
@@ -14,9 +14,18 @@ framework_version: 1.0.0
 - **Email:** becker.richardn@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/richardnbecker
 - **GitHub:** https://github.com/RNBecker-bien
-- **Languages:** English (native)
 - **Status:** BS in Bioengineering, University of California, Riverside (degree conferred June 12, 2026)
 - **Constraints:** Max 50% travel; $70,000 salary baseline (both hard deal-breakers - see Location above and Career Goals in `04-job-evaluation.md`)
+
+### Languages
+<!-- Every language you can work in professionally, with your honest level. Used by the
+Language Gate in 04-job-evaluation.md and by job-scraper/search-queries.md's query-language
+generation. Omit any language you don't actually work in - an undeclared language is treated as
+a hard no, not a gap to smooth over. -->
+
+| Language | Level | Notes |
+|----------|-------|-------|
+| English | Native | |
 
 ## Education
 
