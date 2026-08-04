@@ -36,6 +36,7 @@ When the user provides a job posting (URL or text), follow this workflow:
 - Follow the template structure in `06-cover-letter-templates.md`
 - Create `cover_letters/cover_<company>_<role>.tex`
 - Ensure the letter connects specific experience to the role requirements
+- Verify both documents against `09-verification-checklist.md` before presenting them to the user
 
 ### Step 4: Interview Preparation
 - Follow the framework in `07-interview-prep.md`
@@ -57,6 +58,7 @@ When the user provides a job posting (URL or text), follow this workflow:
 | `06-cover-letter-templates.md` | LaTeX cover letter structure and tailoring rules |
 | `07-interview-prep.md` | STAR examples, tough questions, roleplay guidelines |
 | `08-application-forms.md` | Portal free-text fields: self-introduction, project entries, character-limited pitches |
+| `09-verification-checklist.md` | Mandatory pass/fail checklist for CV/cover letter accuracy, targeting, consistency, quality, compiled PDF, and ATS parseability |
 
 ---
 

@@ -91,6 +91,26 @@ Keep answers to 1-2 minutes. Be specific. End with what you learned or would do 
 - Action:
 - Result:
 
+### Analytical instrument calibration and Tukey outlier QC (Analytical Instrument Calibration coursework)
+**Source:** CV / Independent Project - Analytical Instrument Calibration
+**What happened:** Calibrated UV-Vis spectrometers, pH meters, and volumetric equipment following Good Laboratory Practices, then applied statistical quality control and Tukey outlier analysis to evaluate experimental data integrity.
+**Why it matters:** GLP discipline, data-integrity QC, instrument calibration - used repeatedly in Honeywell, Bio-Rad, and CytoHub CVs
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### PicarX autonomous robot car navigation (UCR Library Summer Robotics Camp)
+**Source:** CV / Independent Project - PicarX AI Self-Driving Robot Car
+**What happened:** Assembled and programmed a SunFounder PicarX robot car using Raspberry Pi and Python, implementing autonomous navigation algorithms for line following, edge detection, color tracking, and obstacle avoidance.
+**Why it matters:** Robotics/autonomy-specific evidence, distinct from the incubator and CV-pipeline stubs - relevant for robotics-adjacent roles (e.g. J&J Clinical Engineer - Surgical Robotics)
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
 ## Common Tough Questions
 
 ### "Why did you leave [previous company]?"
