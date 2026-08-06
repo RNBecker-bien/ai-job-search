@@ -54,6 +54,8 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 ### Certifications
 <!-- List relevant certifications with dates -->
 - **UCR Library Summer Robotics Camp**
+- **MATLAB Onramp** (MathWorks)
+- **Minitab Beginner Certification** (AIGPE) - completed 2026-08-03
 - **TestGorilla Skill Assessment - Analyzing Data** - 99th percentile
 - **TestGorilla Skill Assessment - Problem Solving** - 96th percentile
 
@@ -81,7 +83,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ### Target Sectors
 <!-- Industries and companies you're targeting -->
-- Biomedical devices / diagnostics / genomics: Illumina, Bio-Rad, Agilent, BillionToOne, Natera, Applied Medical, BioMarin Pharmaceutical, Biogen, Amgen, Cedars-Sinai, Avid Bioservices, Twist Bioscience, Axiom Bio, Eli Lilly, Abbott, Quest Diagnostics, Genentech, Siemens Healthineers, Imperative Care, and similar companies
+- Biomedical devices / diagnostics / genomics: Illumina, Bio-Rad, Agilent, BillionToOne, Natera, Applied Medical, BioMarin Pharmaceutical, Biogen, Amgen, Cedars-Sinai, Avid Bioservices, Twist Bioscience, Axiom Bio, Eli Lilly, Abbott, Quest Diagnostics, Genentech, Siemens Healthineers, Imperative Care, Medtronic, and similar companies
 - Robotics / automation (secondary interest, adjacent to biomedical instrumentation)
 
 ### Deal-breakers

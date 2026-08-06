@@ -13,9 +13,11 @@ The `site:` query templates in this file are the **WebSearch fallback** — for 
 ## Search Sites
 
 Primary (portal CLIs installed under `.agents/skills/` — `/scrape` runs these directly, no `site:` query needed):
-- **greenhouse-search** — BillionToOne, Natera, Twist Bioscience, Amyris (public Greenhouse JSON API)
-- **workday-search** — Biogen, Amgen, Abbott, Genentech, Pfizer, Novartis, Vertex Pharmaceuticals, Regeneron, Resilience, Neurocrine Biosciences, Baxter, BioCryst Pharmaceuticals (public Workday CXS JSON API)
+- **greenhouse-search** — BillionToOne, Natera, Twist Bioscience, Amyris, Cala Health (public Greenhouse JSON API)
+- **workday-search** — Biogen, Amgen, Abbott, Genentech, Pfizer, Novartis, Vertex Pharmaceuticals, Regeneron, Resilience, Neurocrine Biosciences, Baxter, BioCryst Pharmaceuticals, Johnson & Johnson, Tandem Diabetes Care, Dexcom, iRhythm Technologies, Insulet, Applied Materials (public Workday CXS JSON API)
 - **linkedin-search** / **freehire-search** — general-purpose, country-agnostic
+- **biospace-search** — BioSpace job board (biotech/pharma/clinical research industry-specific); carries contract and contract-to-hire listings alongside permanent roles
+- **kelly-search** — myKelly (Kelly Services staffing, incl. Kelly Science, Engineering, Technology & Telecom); strong source of temp-to-hire and contract-to-hire placements. No working location filter — fold a city/state into the query text instead (see its SKILL.md)
 
 Secondary (no CLI available — WebSearch `site:` fallback):
 - **linkedin.com/jobs** - LinkedIn job listings (filter: California / United States)
@@ -33,6 +35,15 @@ Secondary (no CLI available — WebSearch `site:` fallback):
   - AccelBio, Advion, Bedrock Therapeutics — small/early-stage companies, no formal ATS found (direct-apply or email-based)
   - BioMarin, Axiom Bio, Siemens Healthineers, and similar biomedical device/diagnostics/genomics companies
   - Novan — defunct as of 2025 (Chapter 11 bankruptcy 2023, assets sold to Ligand Pharmaceuticals, now in liquidation); not a viable employer, do not search
+  - JenaValve Technology — custom career site (jenavalve.com/careers), Irvine CA, no ATS platform identified
+  - Acutus Medical — custom career site (acutusmedical.com/us/careers), Carlsbad CA, no ATS platform identified
+  - Genalyte — JazzHR-hosted (genalyte.applytojob.com), San Diego CA
+  - Biocept — custom career site (biocept.com/careers), San Diego CA, no ATS platform identified
+  - Retia Medical — no online ATS found; apply by emailing resume/cover letter to careers@retiamedical.com; verify current HQ location before applying
+  - Cepheid (Danaher subsidiary) — Danaher's own careers portal (jobs.danaher.com/global/en/cepheid), Sunnyvale CA, not a standalone Workday/Greenhouse tenant
+  - bioMérieux — Durham NC, ATS platform unconfirmed
+  - iCAD — HQ Nashua NH (outside target regions), but maintains a San Jose CA office; ATS platform unconfirmed (careers.icad.com)
+  - Cynosure (merged with Lutronic in 2024, now Cynosure Lutronic under Hahn & Company) — CA openings seen in Fremont and San Francisco; ATS platform unconfirmed
 
 ## Query Categories
 
@@ -70,13 +81,34 @@ site:linkedin.com/jobs "Scientist" fluidics OR microfluidics California
 
 ### Priority 4: Broader Biomedical Engineering
 
-Wider net for general biomedical/instrumentation engineering roles.
+Wider net for general biomedical/instrumentation engineering roles. Titles below lean
+into hands-on troubleshooting/instrumentation strength rather than pure QC/compliance
+documentation work, which has scored weaker in past applications despite matching on
+paper (see the Calibration section in `04-job-evaluation.md`).
 
 ```
 site:linkedin.com/jobs "biomedical engineer" entry level California
 site:indeed.com "instrumentation engineer" entry level California
 site:linkedin.com/jobs "Engineer I" fluidics OR instrumentation California
+site:linkedin.com/jobs "Field Service Engineer" biomedical OR diagnostics OR medical device California
+site:linkedin.com/jobs "Automation Technician" OR "Automation Associate" biotech OR medical device California
+site:linkedin.com/jobs "Instrumentation Technician" biomedical OR diagnostics California
+site:linkedin.com/jobs "Sustaining Engineering" OR "Sustaining Engineer" medical device OR diagnostics California
+site:linkedin.com/jobs "Validation Engineer" OR "Test Engineer" medical device OR instrumentation California
+site:linkedin.com/jobs "V&V Engineer" OR "Verification and Validation Engineer" entry level medical device California
+site:linkedin.com/jobs "NPI Engineer" OR "NPI Test Engineer" entry level medical device California
+"Rotational Development Program" OR "Engineering Leadership Program" medical device new grad
 ```
+
+Tested 2026-08-05: V&V, NPI, and rotational-program queries all surfaced real
+entry-level or 0-2-year postings (Bionano Genomics V&V, J&J NPI Test Engineer,
+named rotational programs at J&J/Integra LifeSciences/Abbott/Cardinal
+Health/Thermo Fisher) and are worth running regularly. "Signal Processing
+Engineer" and "Photonics Engineer"/"Optical Engineer" were tried as keywords
+too but returned mostly defense/semiconductor noise with little biomedical
+relevance — skip them as standalone search terms; if you want that angle,
+check company-specific listings directly (e.g. Genalyte for photonics) rather
+than a generic keyword search.
 
 ### Priority 5: Computer Vision & Applications Science (Biological/Scientific)
 
@@ -98,6 +130,67 @@ site:linkedin.com/jobs "Product Applications Engineer" biomedical OR life scienc
 site:linkedin.com/jobs "Data Analyst" life sciences OR biotech California
 site:linkedin.com/jobs "Biomedical Engineer I" OR "Associate Engineer" California
 ```
+
+### Priority 6: Contract-to-Hire / Staffing-Agency Roles (Kelly, BioSpace)
+
+Strategic pivot: entry-level industry lab experience is the recurring gap flagged
+across past rejections (see Calibration in `04-job-evaluation.md`). A contract-to-hire
+or temp-to-hire placement is a faster way to get that experience on record than
+repeated direct-hire applications in the same weak-conversion band. Fold
+"contract to hire" / "temp to hire" directly into the query text — `kelly-search` and
+`biospace-search` don't expose it as a separate filter flag.
+
+```
+site:linkedin.com/jobs "Research Associate" "contract to hire" OR "temp to hire" California
+research associate contract to hire Irvine
+lab technician temp to hire California
+automation technician contract to hire biotech
+```
+
+Do not drift toward Clinical Research Coordinator/Associate titles here even via
+staffing agencies — that's the same monitoring/compliance work already evaluated as a
+poor fit (Abbott CRA I, 2026-08-04), and staffing packaging doesn't change the day-to-day.
+
+### Priority 7: Field Service / Technical Support
+
+Lower-barrier entry point that leans on hands-on troubleshooting strength
+(a listed behavioral strength) rather than the industry-lab-experience gap
+that's sunk past direct-hire R&D applications (see Calibration in
+`04-job-evaluation.md`). High-volume hiring category at Dexcom, Tandem, and
+iRhythm specifically (all now covered by `workday-search`). Tested
+2026-08-05/06 — real entry-level hits found (X-Ray Field Service Engineer –
+Entry Level in San Diego; high volume of Biomedical Field Service Engineer
+postings nationally).
+
+```
+site:linkedin.com/jobs "Field Service Engineer" entry level medical device OR diagnostics California
+site:linkedin.com/jobs "Biomedical Field Service Engineer" California
+site:linkedin.com/jobs "Field Service Technician" medical device OR diagnostics California
+site:linkedin.com/jobs "Technical Support Engineer" OR "Field Applications Engineer" entry level instrumentation California
+```
+
+### Priority 8: Semiconductor & Broader Instrumentation (Non-Biomedical)
+
+Your fluidics/embedded-control/instrumentation skill set transfers directly
+to semiconductor-equipment and general instrumentation companies, which pull
+from a different applicant pool than "biomedical devices" and may not carry
+the same industry-lab-experience expectations that have sunk past
+biomedical-specific applications. Tested 2026-08-05/06 — real hits found
+(Semiconductor Process Engineer Associate – Entry Level in Goleta; Applied
+Materials' 2026 New College Grad reqs in Santa Clara, now covered by
+`workday-search`).
+
+```
+site:linkedin.com/jobs "Equipment Engineer" entry level semiconductor California
+site:linkedin.com/jobs "Process Engineer" OR "Process Technician" entry level semiconductor California
+site:linkedin.com/jobs "Field Service Engineer" OR "Field Service Technician" entry level semiconductor equipment California
+site:linkedin.com/jobs "New College Grad" semiconductor OR instrumentation engineer California
+```
+
+Note: this category is deliberately broader than the "biomedical devices/diagnostics/genomics"
+target-sector framing in CLAUDE.md — flag any resulting company to the user before drafting
+if it's unclear whether it still fits the target-sector intent, since Career Alignment scoring
+(see `04-job-evaluation.md`) assumes a biomedical/robotics direction.
 
 ## Location Filter
 

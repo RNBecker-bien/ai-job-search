@@ -14,7 +14,9 @@ framework_version: 1.1.1
 - **Email:** becker.richardn@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/richardnbecker
 - **GitHub:** https://github.com/RNBecker-bien
+- **Project Portfolio:** https://docs.google.com/presentation/d/1eQIyMVp1jMwblU0YGZrEkLCfjrAe-tNOlWA5KqHtIm8/edit?usp=sharing (slide deck of projects)
 - **Status:** BS in Bioengineering, University of California, Riverside (degree conferred June 12, 2026)
+- **Citizenship:** U.S. citizen - passes citizenship-based eligibility gates (including security-clearance-eligible roles) without further verification
 - **Constraints:** Max 50% travel; $70,000 salary baseline (both hard deal-breakers - see Location above and Career Goals in `04-job-evaluation.md`)
 
 ### Languages
@@ -53,7 +55,7 @@ Department of Chemical and Environmental Engineering, UCR Bourns College of Engi
 
 ## Independent Projects
 <!-- Section name is a holdover and not literally accurate for every entry - do not describe these as "outside of employment" or "independent" in drafts by default, and do not label them "(Independent Project)" on CVs (see feedback_no_independent_project_label memory). Per-entry provenance noted below; check it before framing a bullet as academic vs. extracurricular. -->
-- **Cell Culture Incubator and Environmental Stress Simulator** (Sept 2025 - Jun 2026) - *coursework, Senior Design capstone*: Co-designed a mammalian cell culture incubator with programmable temperature control, tri-gas regulation (CO2, O2, N2), and controlled light stimulation. Developed embedded software on dual Arduino Mega microcontrollers with an LCD interface. Increased thermal operating range from 25C to 50C through iterative hardware optimization. Diagnosed a CO2 sensor drift event traced to atmospheric calibration offset and implemented a nitrogen-purge recalibration protocol; identified a TEC module thermal-runaway risk and mitigated it with PWM power limiting; located and verified the fix for a chamber leak before returning the system to service. Built MATLAB and Python analysis tools to evaluate system performance. Presented at the UCR Bioengineering Senior Design Showcase.
+- **Cell Culture Incubator and Environmental Stress Simulator** (Sept 2025 - Jun 2026) - *coursework, Senior Design capstone*: Co-designed a mammalian cell culture incubator with programmable temperature control, tri-gas regulation (CO2, O2, N2), and controlled light stimulation. Developed embedded software on dual Arduino Mega microcontrollers with an LCD interface. Integrated sensors/actuators via multiple communication protocols: a SprintIR-WX-20 CO2 sensor and a DHT11 temperature/humidity sensor over UART, and a SEN0496 O2 sensor over I2C. Increased thermal operating range from 25C to 50C through iterative hardware optimization. Diagnosed a CO2 sensor drift event traced to atmospheric calibration offset and implemented a nitrogen-purge recalibration protocol; identified a TEC module thermal-runaway risk and mitigated it with PWM power limiting; located and verified the fix for a chamber leak before returning the system to service. Built MATLAB and Python analysis tools to evaluate system performance. Presented at the UCR Bioengineering Senior Design Showcase.
 - **Microfluidic Tumor-on-a-Chip Modeling** - *coursework*: Designed a two-inlet microfluidic device and simulated species transport using COMSOL Multiphysics. Characterized velocity fields and diffusion gradients to investigate drug delivery limitations in poorly perfused tumor microenvironments.
 - **Mucus Effects on Human Airway Modeling** (Dec 2024 - Mar 2025) - *coursework*: Developed a life-size COMSOL model of the trachea, primary bronchus, and secondary bronchi to simulate airflow velocity under varying mucus concentrations, comparing healthy and diseased fluid dynamic conditions.
 - **Liver Lobule Fluid Flow Under Cirrhosis** (Sept 2024 - Dec 2024) - *coursework*: Modeled conjoined human liver lobules in COMSOL to quantify the hemodynamic impact of progressive scar tissue on hepatic blood flow through a porous structure under cirrhotic and healthy conditions.
@@ -74,7 +76,7 @@ Department of Chemical and Environmental Engineering, UCR Bourns College of Engi
 
 ### Programming & ML
 - **Python** (proficient): NumPy, pandas, OpenCV, scikit-image, matplotlib
-- **MATLAB**, **Arduino** (C-based), **Git/GitHub**
+- **MATLAB**, **Arduino** (C/C++), **Git/GitHub**
 
 ### Domain Expertise
 - Fluidic and microfluidic systems, embedded instrumentation and control, computer vision for microbial phenotyping, bioinstrumentation
@@ -91,6 +93,7 @@ Department of Chemical and Environmental Engineering, UCR Bourns College of Engi
 
 ### Instrumentation & Fabrication
 - Closed-loop feedback control, solenoid valve flow regulation, PWM motor/TEC control, sensor calibration, embedded systems design, 3D prototyping and design
+- Communication protocols: UART (SprintIR-WX-20 CO2 sensor, DHT11 temperature/humidity sensor), I2C (SEN0496 O2 sensor)
 
 ### Certifications
 - UCR Library Summer Robotics Camp
