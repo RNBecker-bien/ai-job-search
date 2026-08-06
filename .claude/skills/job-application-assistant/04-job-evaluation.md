@@ -255,11 +255,13 @@ consumer benefits.
 
 ## Weighting
 - Technical Skills: 30%
-- Experience Match: 25%
+- Experience Match: 35%
 - Behavioral Fit: 15%
-- Career Alignment: 30%
+- Career Alignment: 20%
 
 (Location is pass/fail, not weighted)
+
+**Rationale (2026-08-04):** shifted 10 points from Career Alignment to Experience Match, at the candidate's request, to better reflect how a recruiter actually screens - demonstrated experience fit over whether the role serves the candidate's personal career trajectory. Career Alignment remains scored and reported (it still matters for the candidate's own decision), just weighted less heavily into the overall recommendation score.
 
 ## Thresholds
 - **Strong Fit** (75+): Definitely apply, tailor everything

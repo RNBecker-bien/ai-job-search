@@ -74,8 +74,17 @@ A tenant is identified by four values, all visible in its careers URL
 | amgen | amgen | wd1 | amgen | Careers |
 | abbott | abbott | wd5 | abbott | abbottcareers |
 | genentech | roche | wd3 | roche | ROG-A2O-GENE |
+| tandem | tandemdiabetes | wd12 | tandemdiabetes | tandemdiabetes |
+| dexcom | dexcom | wd1 | dexcom | Dexcom |
+| irhythm | irhythmtech | wd5 | irhythmtech | iRhythm |
+| insulet | insulet | wd5 | insulet | insuletcareers |
+| appliedmaterials | amat | wd1 | amat | External |
 
 All four confirmed live as of 2026-07-22 via the POST search endpoint above.
+`tandem`, `dexcom`, `irhythm`, and `insulet` confirmed live 2026-08-05.
+`appliedmaterials` confirmed live 2026-08-06 — note its total open-req count
+runs in the thousands and is mostly non-US/non-entry-level, so scope queries
+with `-q` and `--location` rather than pulling unfiltered.
 
 ## Known non-working tenant: Eli Lilly
 

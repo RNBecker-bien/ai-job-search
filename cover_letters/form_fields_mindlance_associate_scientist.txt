@@ -1,0 +1,44 @@
+MINDLANCE - Associate Scientist (South San Francisco, CA, Contract)
+Application-form fields — SmartRecruiters portal
+================================================================
+
+FIELD: "Let the company know about your interest working here"
+------------------------------------------------------------
+(Motivation question, no stated character limit on the portal — treating as an
+open text box. Word count given below; trim per the short variant if the box
+truncates.)
+
+FULL VERSION (98 words):
+
+I'm drawn to this role because it puts me directly into hands-on immunology
+lab work at a Bay Area biotech, which is exactly the kind of industry
+experience I'm building toward after finishing my Bioengineering degree at UC
+Riverside this June. My lab background is strong on cell culture, recombinant
+protein work, and quantitative in vitro assay development, and I want to be
+upfront that flow cytometry is new to me rather than something I've used
+hands-on. What I bring instead is a track record of picking up new lab
+instrumentation quickly and applying the same rigor to a new assay class. I'd
+welcome the chance to bring that to this team.
+
+[98 words]
+
+SHORT VERSION (52 words, cut here first if truncated):
+
+I'm drawn to this role for the hands-on immunology lab work at a Bay Area
+biotech, exactly the industry experience I'm building toward after finishing
+my Bioengineering degree at UC Riverside this June. My background is strong
+in cell culture and quantitative in vitro assay development; flow cytometry
+is new to me, and I pick up new instrumentation quickly.
+
+[52 words]
+
+NOTE TO SELF (not for pasting):
+- This field and the cover letter both disclose the flow cytometry gap
+  deliberately — do not soften it here just because the box is shorter. It's
+  the single most load-bearing honesty point in this whole application.
+- If the portal's box has a hard character cap, count characters before
+  pasting the "full version" — this was word-counted, not character-counted,
+  since SmartRecruiters fields vary and no limit was stated on this posting.
+- End-client is still unnamed as of drafting (2026-08-05) — if you learn who
+  it is before submitting, the "Bay Area biotech" phrasing can be swapped for
+  the real name, but don't guess at one now.

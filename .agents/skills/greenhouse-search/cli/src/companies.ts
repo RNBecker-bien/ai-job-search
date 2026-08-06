@@ -14,6 +14,7 @@ export const COMPANIES: CompanyEntry[] = [
   { slug: "natera", label: "Natera" },
   { slug: "twistbioscience", label: "Twist Bioscience" },
   { slug: "amyrisinc", label: "Amyris" },
+  { slug: "calahealth", label: "Cala Health" },
 ]
 
 export function findCompany(slug: string): CompanyEntry | undefined {

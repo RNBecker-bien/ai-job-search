@@ -34,6 +34,11 @@ export const COMPANIES: CompanyEntry[] = [
   { slug: "baxter", label: "Baxter", subdomain: "baxter", wd: "wd1", tenant: "baxter", site: "baxter" },
   { slug: "biocryst", label: "BioCryst Pharmaceuticals", subdomain: "biocryst", wd: "wd501", tenant: "biocryst", site: "External" },
   { slug: "jnj", label: "Johnson & Johnson", subdomain: "jj", wd: "wd5", tenant: "jj", site: "jj" },
+  { slug: "tandem", label: "Tandem Diabetes Care", subdomain: "tandemdiabetes", wd: "wd12", tenant: "tandemdiabetes", site: "tandemdiabetes" },
+  { slug: "dexcom", label: "Dexcom", subdomain: "dexcom", wd: "wd1", tenant: "dexcom", site: "Dexcom" },
+  { slug: "irhythm", label: "iRhythm Technologies", subdomain: "irhythmtech", wd: "wd5", tenant: "irhythmtech", site: "iRhythm" },
+  { slug: "insulet", label: "Insulet", subdomain: "insulet", wd: "wd5", tenant: "insulet", site: "insuletcareers" },
+  { slug: "appliedmaterials", label: "Applied Materials", subdomain: "amat", wd: "wd1", tenant: "amat", site: "External" },
 ]
 
 export function findCompany(slug: string): CompanyEntry | undefined {

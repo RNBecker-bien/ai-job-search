@@ -129,7 +129,7 @@ The font wrapper is mandatory — if you just move `\begin{itemize}` outside `\l
 
 - **Opening hook:** The first paragraph leads with a company- or product-specific concrete detail (a technique, a metric, a platform name) connected to a broader theme, before naming the role - not a generic "I am writing to apply for..." opener.
 - **Technique-mapping paragraph:** The second paragraph maps specific bench techniques or tools directly to stated role requirements, usually naming the exact course/project context where each was performed (e.g. "in my biotechnology laboratory at UC Riverside, I performed...").
-- **Honesty paragraph:** Several letters include an explicit "gaps worth naming directly" or "I want to be transparent" paragraph acknowledging what's missing (industry vs. academic setting, an unused instrument/platform) before the closing - this consistently precedes the closing line rather than being buried mid-letter.
+- **Honesty paragraph:** Several letters include an explicit "gaps worth naming directly" or "I want to be transparent" paragraph acknowledging what's missing (industry vs. academic setting, an unused instrument/platform) before the closing - this consistently precedes the closing line rather than being buried mid-letter. **Frame conservatively (see "Addressing Gaps" below)** - name the gap, then immediately pivot to what closes it, rather than stating it as a flat negative.
 
 ## Tailoring Guidelines
 
@@ -155,6 +155,28 @@ The font wrapper is mandatory — if you just move `\begin{itemize}` outside `\l
 - Start each bullet with bold label or action verb
 - Use `\textbf{Label:}` for category-style bullets
 - A bullet whose text begins with a literal `[` must be braced: `\item {[text]}`. Unbraced, LaTeX parses `[text]` as `\item`'s optional label and renders it off the left page edge, missing from the PDF text layer entirely
+
+### Addressing Gaps
+
+When a role has a gap flagged by `04-job-evaluation.md`'s scoring (e.g. industry vs.
+academic lab experience, an unused platform or tool), name it - don't omit it - but
+frame it as something already closing rather than a fixed shortfall:
+
+- **Don't:** state the gap as a standalone negative ("I have not yet worked in an
+  industry lab setting" / "I lack direct experience with X") with no forward motion
+  in the same sentence or the next.
+- **Do:** name the gap and immediately pair it with the closest adjacent experience
+  and a concrete signal of how fast it closes - a related tool already mastered, a
+  fast self-directed learning example, or a specific first step you'd take on the job.
+  ("My hands-on experience has been in an academic research setting rather than an
+  industry lab - the same build-test-iterate cycle I used to debug our computer
+  vision pipeline transfers directly, and I pick up new instrumentation quickly, as
+  I did teaching myself COMSOL for [project].")
+- Keep it to one sentence of acknowledgment plus one sentence of bridge - don't let
+  the gap paragraph run longer than the strengths it's meant to balance.
+- This is framing only, not fabrication: never claim direct experience you don't
+  have. The gap is still named; only the emphasis shifts from "deficit" to
+  "adaptable and closing fast."
 
 ### LaTeX Special Characters
 Escape these wherever they appear in body text:
