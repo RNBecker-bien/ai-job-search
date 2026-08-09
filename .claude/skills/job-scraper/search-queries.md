@@ -51,7 +51,125 @@ Queries are grouped by priority. Write **each category in every language from yo
 
 **Organize by function, not job title.** The same underlying work carries different titles across companies and markets (a "Data Scientist" role at one employer may be posted as "Insights Analyst" or "Data Consultant" at another). Name each priority category after the function it covers, and list several plausible job titles as query variants within that category rather than betting an entire priority tier on one exact title string.
 
-### Priority 1: Quality & Test Engineering
+**Default top 3 (reordered 2026-08-06):** Priorities 1-3 below (Field Service, Semiconductor & Broader Instrumentation, Contract-to-Hire) are what `/scrape` runs by default now. They were Priorities 6-8 until this reordering; promoted after a same-day side-by-side test where they produced 8 high + 4 medium genuinely-entry-level hits against zero high-fit hits from the old top 3 (Quality & Test, Research & R&D Associate, Automation & Adjacent) run earlier the same day. The old top 3 are still valuable (Priorities 5-7 below) - the reordering reflects hit-rate, not that biomedical-specific roles stopped mattering - but title conventions in that cluster ("Research Associate," "Quality Engineer") turned out to be an unreliable filter: postings gate on hidden years-of-experience floors more often than the semiconductor/field-service/staffing cluster does. Revisit this ordering if the pattern reverses.
+
+**Priority 4 (promoted 2026-08-09):** the R&D/Regulatory/Clinical/Manufacturing/Systems Engineering category was added and immediately promoted to Priority 4 at the user's request, ahead of the pre-existing Priorities 5-9 - not yet hit-rate-tested like the Priority 1-3 promotion above. Revisit its position once it has a few runs of results behind it.
+
+### Entry-Level Language Bias
+
+Across both categories, the single strongest signal for genuine fit turned out to be explicit posting language, not title conventions. A "Research Associate II" can gate at 3-5 years; a "Laboratory Service Engineer 1" can require zero. So:
+
+- **Prefer queries that search for the phrase, not just the title.** Where a category below doesn't already include one, add a variant with `"0-2 years"`, `"entry level"`, `"no experience required"`, `"recent graduate"`, or `"early career"` alongside the role keyword - these phrases in the posting text are a far more reliable signal than "Associate," "I," or "Junior" in the title, all of which this run showed can still gate high.
+- **Don't downgrade a hit for lacking a seniority-sounding title** - "Laboratory Service Engineer 1" and "Junior Process Engineer" both cleared the gate cleanly despite plain titles. Read the qualifications section, not the title, before excluding.
+- **Do downgrade a hit that has an entry-sounding title but no explicit low-experience language** - flag it for a `detail` fetch before presenting; several "Associate Scientist" and "Research Associate II" postings this run turned out to require 3-5 years despite reading as entry-level on the surface.
+
+### Priority 1: Field Service / Technical Support
+
+Lower-barrier entry point that leans on hands-on troubleshooting strength
+(a listed behavioral strength) rather than the industry-lab-experience gap
+that's sunk past direct-hire R&D applications (see Calibration in
+`04-job-evaluation.md`). High-volume hiring category at Dexcom, Tandem, and
+iRhythm specifically (all now covered by `workday-search`). Tested
+2026-08-05/06 - real entry-level hits found (X-Ray Field Service Engineer –
+Entry Level in San Diego; high volume of Biomedical Field Service Engineer
+postings nationally; Canon USA and Thermo Fisher both run explicit I/II/III
+tiers where Level I requires little to no prior experience - search the
+generic title and check the tier in `detail`, since tier is rarely visible
+in the search snippet).
+
+```
+site:linkedin.com/jobs "Field Service Engineer" entry level medical device OR diagnostics California
+site:linkedin.com/jobs "Biomedical Field Service Engineer" California
+site:linkedin.com/jobs "Field Service Technician" medical device OR diagnostics California
+site:linkedin.com/jobs "Technical Support Engineer" OR "Field Applications Engineer" entry level instrumentation California
+site:linkedin.com/jobs "Field Service Engineer I" OR "Field Service Technician I" California
+```
+
+### Priority 2: Semiconductor & Broader Instrumentation (Non-Biomedical)
+
+Your fluidics/embedded-control/instrumentation skill set transfers directly
+to semiconductor-equipment and general instrumentation companies, which pull
+from a different applicant pool than "biomedical devices" and may not carry
+the same industry-lab-experience expectations that have sunk past
+biomedical-specific applications. Tested 2026-08-05/06 - real hits found
+(Semiconductor Process Engineer Associate – Entry Level in Goleta; Applied
+Materials' 2026 New College Grad reqs in Santa Clara, now covered by
+`workday-search`; Lam Research Laboratory Service Engineer 1 explicitly
+states "no previous professional experience"; Sanmina Junior Process
+Engineer and Tetra Tech/TIGA Automation Specialist both state "0-2 years"
+outright).
+
+```
+site:linkedin.com/jobs "Equipment Engineer" entry level semiconductor California
+site:linkedin.com/jobs "Process Engineer" OR "Process Technician" entry level semiconductor California
+site:linkedin.com/jobs "Field Service Engineer" OR "Field Service Technician" entry level semiconductor equipment California
+site:linkedin.com/jobs "New College Grad" semiconductor OR instrumentation engineer California
+site:linkedin.com/jobs "Laboratory Service Engineer" OR "Lab Service Engineer" semiconductor OR instrumentation California
+site:linkedin.com/jobs "Automation Engineer" OR "Automation Specialist" "0-2 years" California
+site:linkedin.com/jobs "Junior Process Engineer" OR "Junior Engineer" semiconductor OR instrumentation California
+```
+
+Note: this category is deliberately broader than the "biomedical devices/diagnostics/genomics"
+target-sector framing in CLAUDE.md - flag any resulting company to the user before drafting
+if it's unclear whether it still fits the target-sector intent, since Career Alignment scoring
+(see `04-job-evaluation.md`) assumes a biomedical/robotics direction.
+
+### Priority 3: Contract-to-Hire / Staffing-Agency Roles (Kelly, BioSpace)
+
+Strategic pivot: entry-level industry lab experience is the recurring gap flagged
+across past rejections (see Calibration in `04-job-evaluation.md`). A contract-to-hire
+or temp-to-hire placement is a faster way to get that experience on record than
+repeated direct-hire applications in the same weak-conversion band. Fold
+"contract to hire" / "temp to hire" directly into the query text - `kelly-search` and
+`biospace-search` don't expose it as a separate filter flag.
+
+**Verify the experience floor before presenting.** This category has produced some of
+the sharpest false positives - staffing listings frequently use entry-sounding titles
+("Associate Researcher," "Research Associate") while requiring 2-4+ years of *industry*
+experience in the qualifications section (e.g. Kelly's "Associate Researcher" in Pasadena,
+tested 2026-08-06, required BS+4yrs or MS+2yrs despite the title). Always fetch `detail`
+before presenting a contract-to-hire hit.
+
+```
+site:linkedin.com/jobs "Research Associate" "contract to hire" OR "temp to hire" California
+site:linkedin.com/jobs "Research Associate" "0-2 years" OR "entry level" contract California
+research associate contract to hire Irvine
+lab technician temp to hire California
+automation technician contract to hire biotech
+process technician contract to hire OR "graduate engineer" semiconductor OR biotech California
+```
+
+Do not drift toward Clinical Research Coordinator/Associate titles here even via
+staffing agencies - that's the same monitoring/compliance work already evaluated as a
+poor fit (Abbott CRA I, 2026-08-04), and staffing packaging doesn't change the day-to-day.
+
+### Priority 4: R&D, Regulatory, Clinical, and Manufacturing/Systems Engineering Titles
+
+Additional target titles (2026-08-09, promoted to Priority 4 same day at the user's request)
+spanning R&D, regulatory, field-clinical, manufacturing, and systems-engineering tracks -
+broadens beyond the QC/quality-engineer and pure-research titles covered in Priorities 5-9
+below. Some overlap with those categories is intentional (e.g. "Quality Engineer" is also in
+Priority 5, "Process Engineer" also in Priority 2) - this section adds the titles/keywords
+that weren't yet queried anywhere: R&D Engineer, Regulatory Affairs Specialist, Field Clinical
+Engineer, Clinical Application Specialist, Product Development Engineer, Manufacturing
+Engineer, and System Engineer. Apply the same Entry-Level Language Bias rule above - fetch
+`detail` before presenting, since several of these titles (Regulatory Affairs Specialist,
+Clinical Application Specialist) commonly gate on years of industry experience even at
+"Specialist I" or similar plain-sounding titles.
+
+```
+site:linkedin.com/jobs "R&D Engineer" OR "R&D Engineer I" entry level medical device OR biomedical California
+site:linkedin.com/jobs "Regulatory Affairs Specialist" entry level OR "0-2 years" medical device California
+site:linkedin.com/jobs "Field Clinical Engineer" OR "Field Clinical Specialist" entry level medical device California
+site:linkedin.com/jobs "Clinical Application Specialist" OR "Clinical Applications Specialist" entry level medical device OR diagnostics California
+site:linkedin.com/jobs "Quality Engineer" OR "Quality Engineer I" entry level medical device California
+site:linkedin.com/jobs "Product Development Engineer" entry level medical device OR biomedical California
+site:linkedin.com/jobs "Manufacturing Engineer" OR "Manufacturing Engineer I" entry level medical device OR biotech California
+site:linkedin.com/jobs "Process Engineer" OR "Process Engineer I" entry level medical device OR biotech California
+site:linkedin.com/jobs "Systems Engineer" OR "System Engineer" entry level medical device OR biomedical California
+```
+
+### Priority 5: Quality & Test Engineering
 
 These match your strongest and most desired near-term direction - entry-level quality/test roles at biomedical device and diagnostics companies.
 
@@ -62,7 +180,7 @@ site:linkedin.com/jobs "Test Engineer" fluidics OR instrumentation California
 site:indeed.com "Quality Engineer" biomedical devices California
 ```
 
-### Priority 2: Research & R&D Associate Roles
+### Priority 6: Research & R&D Associate Roles
 
 These match your domain expertise in fluidics, instrumentation, and COMSOL-based modeling.
 
@@ -72,7 +190,7 @@ site:linkedin.com/jobs "R&D Associate" OR "R&D Technician" instrumentation Calif
 site:indeed.com "Research Associate" biomedical devices California
 ```
 
-### Priority 3: Automation & Adjacent Roles
+### Priority 7: Automation & Adjacent Roles
 
 Adjacent roles you could pivot into, including robotics/automation.
 
@@ -81,7 +199,7 @@ site:linkedin.com/jobs "Automation Engineer" biomedical OR devices California
 site:linkedin.com/jobs "Scientist" fluidics OR microfluidics California
 ```
 
-### Priority 4: Broader Biomedical Engineering
+### Priority 8: Broader Biomedical Engineering
 
 Wider net for general biomedical/instrumentation engineering roles. Titles below lean
 into hands-on troubleshooting/instrumentation strength rather than pure QC/compliance
@@ -112,9 +230,9 @@ relevance — skip them as standalone search terms; if you want that angle,
 check company-specific listings directly (e.g. Genalyte for photonics) rather
 than a generic keyword search.
 
-### Priority 5: Computer Vision & Applications Science (Biological/Scientific)
+### Priority 9: Computer Vision & Applications Science (Biological/Scientific)
 
-Matches your Phenotypic computer vision work and microbial phenotyping domain, plus applications-facing roles common at diagnostics/genomics companies. Applications Scientist and Field Applications Scientist queries stay scoped to biomedical/life-sciences employers to avoid generic sales-engineering results.
+Matches your Phenotypic computer vision work and microbial phenotyping domain, plus applications-facing roles common at diagnostics/genomics companies. Applications Scientist and Field Applications Scientist queries stay scoped to biomedical/life-sciences employers to avoid generic sales-engineering results. Tested 2026-08-06: several "Applications Scientist" and "Field Application Scientist" hits gated at 3-5+ years or a Master's/PhD floor despite reading as approachable on the title alone (Gator Bio, Stellaromics, both Thermo Fisher FAS roles) - always fetch `detail` before presenting from this category, same caution as Priority 3.
 
 ```
 site:linkedin.com/jobs "Bioimage Analyst" OR "Imaging Scientist" California
@@ -131,68 +249,8 @@ site:linkedin.com/jobs "Lab Automation Engineer" OR "Automation Technician" biot
 site:linkedin.com/jobs "Product Applications Engineer" biomedical OR life sciences California
 site:linkedin.com/jobs "Data Analyst" life sciences OR biotech California
 site:linkedin.com/jobs "Biomedical Engineer I" OR "Associate Engineer" California
+site:linkedin.com/jobs "Technical Applications Scientist" "entry level" OR "1 year" biomedical OR biotech California
 ```
-
-### Priority 6: Contract-to-Hire / Staffing-Agency Roles (Kelly, BioSpace)
-
-Strategic pivot: entry-level industry lab experience is the recurring gap flagged
-across past rejections (see Calibration in `04-job-evaluation.md`). A contract-to-hire
-or temp-to-hire placement is a faster way to get that experience on record than
-repeated direct-hire applications in the same weak-conversion band. Fold
-"contract to hire" / "temp to hire" directly into the query text — `kelly-search` and
-`biospace-search` don't expose it as a separate filter flag.
-
-```
-site:linkedin.com/jobs "Research Associate" "contract to hire" OR "temp to hire" California
-research associate contract to hire Irvine
-lab technician temp to hire California
-automation technician contract to hire biotech
-```
-
-Do not drift toward Clinical Research Coordinator/Associate titles here even via
-staffing agencies — that's the same monitoring/compliance work already evaluated as a
-poor fit (Abbott CRA I, 2026-08-04), and staffing packaging doesn't change the day-to-day.
-
-### Priority 7: Field Service / Technical Support
-
-Lower-barrier entry point that leans on hands-on troubleshooting strength
-(a listed behavioral strength) rather than the industry-lab-experience gap
-that's sunk past direct-hire R&D applications (see Calibration in
-`04-job-evaluation.md`). High-volume hiring category at Dexcom, Tandem, and
-iRhythm specifically (all now covered by `workday-search`). Tested
-2026-08-05/06 — real entry-level hits found (X-Ray Field Service Engineer –
-Entry Level in San Diego; high volume of Biomedical Field Service Engineer
-postings nationally).
-
-```
-site:linkedin.com/jobs "Field Service Engineer" entry level medical device OR diagnostics California
-site:linkedin.com/jobs "Biomedical Field Service Engineer" California
-site:linkedin.com/jobs "Field Service Technician" medical device OR diagnostics California
-site:linkedin.com/jobs "Technical Support Engineer" OR "Field Applications Engineer" entry level instrumentation California
-```
-
-### Priority 8: Semiconductor & Broader Instrumentation (Non-Biomedical)
-
-Your fluidics/embedded-control/instrumentation skill set transfers directly
-to semiconductor-equipment and general instrumentation companies, which pull
-from a different applicant pool than "biomedical devices" and may not carry
-the same industry-lab-experience expectations that have sunk past
-biomedical-specific applications. Tested 2026-08-05/06 — real hits found
-(Semiconductor Process Engineer Associate – Entry Level in Goleta; Applied
-Materials' 2026 New College Grad reqs in Santa Clara, now covered by
-`workday-search`).
-
-```
-site:linkedin.com/jobs "Equipment Engineer" entry level semiconductor California
-site:linkedin.com/jobs "Process Engineer" OR "Process Technician" entry level semiconductor California
-site:linkedin.com/jobs "Field Service Engineer" OR "Field Service Technician" entry level semiconductor equipment California
-site:linkedin.com/jobs "New College Grad" semiconductor OR instrumentation engineer California
-```
-
-Note: this category is deliberately broader than the "biomedical devices/diagnostics/genomics"
-target-sector framing in CLAUDE.md — flag any resulting company to the user before drafting
-if it's unclear whether it still fits the target-sector intent, since Career Alignment scoring
-(see `04-job-evaluation.md`) assumes a biomedical/robotics direction.
 
 ## Location Filter
 
