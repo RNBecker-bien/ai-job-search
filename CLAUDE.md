@@ -92,17 +92,4 @@ automatically from your Languages table above - don't duplicate them here. -->
 - More than 50% travel
 - Below $70,000 salary baseline
 
-## Repo Structure
-- `cv/` - LaTeX CV variants (moderncv template, banking style)
-- `cover_letters/` - LaTeX cover letters (custom cover.cls template)
-- `.claude/skills/` - AI skill definitions for the application workflow
-- `.agents/skills/` - Job search CLI tools
-
-## Workflow for New Job Applications
-1. User provides a job posting (URL or text)
-2. **Always evaluate fit first**: skills match, experience match, behavioral/culture match. Present this assessment to the user before proceeding.
-3. If good fit: create targeted CV (`cv/main_<company>_<role>.tex`) and cover letter (`cover_letters/cover_<company>_<role>.tex`)
-4. **Verify both documents** (see `.claude/skills/job-application-assistant/09-verification-checklist.md`)
-5. Prepare interview talking points based on the role requirements and your strengths
-
 **Important:** When mentioning agentic coding or AI tooling in CVs/cover letters, explicitly reference **Claude Code** by name.
