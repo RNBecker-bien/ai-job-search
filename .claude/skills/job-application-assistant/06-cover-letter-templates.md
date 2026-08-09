@@ -159,23 +159,30 @@ The font wrapper is mandatory — if you just move `\begin{itemize}` outside `\l
 
 When a role has a gap flagged by `04-job-evaluation.md`'s scoring (e.g. industry vs.
 academic lab experience, an unused platform or tool), name it - don't omit it - but
-frame it as something already closing rather than a fixed shortfall:
+**lead with the transferable strength, not the gap**. Even a gap sentence followed by
+a bridge still front-loads the negative; the stronger pattern states the transfer
+first and folds the specific unfamiliar tools in afterward, as something being
+ramped up on quickly rather than a headline list of what's missing.
 
-- **Don't:** state the gap as a standalone negative ("I have not yet worked in an
-  industry lab setting" / "I lack direct experience with X") with no forward motion
-  in the same sentence or the next.
-- **Do:** name the gap and immediately pair it with the closest adjacent experience
-  and a concrete signal of how fast it closes - a related tool already mastered, a
-  fast self-directed learning example, or a specific first step you'd take on the job.
-  ("My hands-on experience has been in an academic research setting rather than an
-  industry lab - the same build-test-iterate cycle I used to debug our computer
-  vision pipeline transfers directly, and I pick up new instrumentation quickly, as
-  I did teaching myself COMSOL for [project].")
-- Keep it to one sentence of acknowledgment plus one sentence of bridge - don't let
-  the gap paragraph run longer than the strengths it's meant to balance.
+- **Don't:** open with a gaps list, even a well-bridged one - "I want to be direct
+  about the gaps: I have not yet used X, Y, or Z. The skills I built... transfer
+  directly, and I pick up new tools quickly." This still reads as leading with
+  deficits.
+- **Don't (older pattern, superseded):** state the gap as a standalone negative
+  ("I have not yet worked in an industry lab setting" / "I lack direct experience
+  with X") with no forward motion at all.
+- **Do:** lead with the transferable skill and learning speed, then name the specific
+  gap tools in passing as things you'll ramp up on fast. ("The build-test-iterate
+  cycle I used to debug our computer vision pipeline transfers directly to an
+  industry lab setting, and I pick up new instrumentation efficiently, as I did
+  teaching myself COMSOL for [project]. I'd bring that same fast ramp-up to
+  [specific gap tool/platform] on the job.")
+- Keep it to roughly the same length as before - one sentence of strength/transfer
+  plus one sentence naming the specific tools - don't let the gap paragraph run
+  longer than the strengths it's meant to balance.
 - This is framing only, not fabrication: never claim direct experience you don't
-  have. The gap is still named; only the emphasis shifts from "deficit" to
-  "adaptable and closing fast."
+  have. The gap tools are still named explicitly; only the paragraph's opening beat
+  shifts from "deficit" to "adaptable, efficient, and closing fast."
 
 ### LaTeX Special Characters
 - Underscore: `\_`
