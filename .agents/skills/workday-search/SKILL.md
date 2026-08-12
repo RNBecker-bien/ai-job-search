@@ -5,18 +5,20 @@ description: >
   Use this skill to search live job listings at Biogen, Amgen, Abbott,
   Genentech, Pfizer, Novartis, Vertex Pharmaceuticals, Regeneron, Resilience,
   Neurocrine Biosciences, Baxter, BioCryst Pharmaceuticals, Johnson & Johnson,
-  Tandem Diabetes Care, Dexcom, iRhythm Technologies, Insulet, and Applied
-  Materials — large biomedical/pharma/diagnostics/medtech/semiconductor-
-  equipment companies that host their careers site on Workday — via Workday's
-  public CXS JSON API. Covers all seventeen with one CLI (extensible to more
-  Workday-hosted companies by editing a registry file). Trigger phrases:
+  Tandem Diabetes Care, Dexcom, iRhythm Technologies, Insulet, Applied
+  Materials, and AeroVironment — large biomedical/pharma/diagnostics/medtech/
+  semiconductor-equipment/robotics companies that host their careers site on
+  Workday — via Workday's public CXS JSON API. Covers all eighteen with one
+  CLI (extensible to more Workday-hosted companies by editing a registry
+  file). Trigger phrases:
   Biogen jobs, Biogen careers, Amgen jobs, Amgen careers, Abbott jobs, Abbott
   careers, Genentech jobs, Genentech careers, Pfizer jobs, Novartis jobs,
   Vertex Pharmaceuticals jobs, Regeneron jobs, Resilience jobs, Neurocrine
   jobs, Baxter jobs, BioCryst jobs, Tandem Diabetes jobs, Dexcom jobs,
-  iRhythm jobs, Insulet jobs, Applied Materials jobs, Workday job board,
-  pharma company jobs, medtech company careers, biotech company careers,
-  semiconductor equipment careers.
+  iRhythm jobs, Insulet jobs, Applied Materials jobs, AeroVironment jobs,
+  AVAV jobs, Workday job board, pharma company jobs, medtech company
+  careers, biotech company careers, semiconductor equipment careers,
+  robotics/drone company careers.
 context: fork
 enabled: true  # set to false to keep this portal installed but have /scrape skip it
 allowed-tools: Bash(bun run .agents/skills/workday-search/cli/src/cli.ts *)
@@ -30,7 +32,7 @@ Service) JSON API across a fixed registry of target companies — currently
 **Vertex Pharmaceuticals**, **Regeneron**, **Resilience**, **Neurocrine
 Biosciences**, **Baxter**, **BioCryst Pharmaceuticals**, **Johnson &
 Johnson**, **Tandem Diabetes Care**, **Dexcom**, **iRhythm Technologies**,
-**Insulet**, and **Applied Materials**. No authentication needed. Workday
+**Insulet**, **Applied Materials**, and **AeroVironment**. No authentication needed. Workday
 sites are behind Akamai bot management, so treat this as best-effort: a
 single tenant can start blocking non-browser traffic without warning (see
 Notes).
@@ -50,7 +52,7 @@ bun run .agents/skills/workday-search/cli/src/cli.ts search [flags]
 ```
 
 Key flags:
-- `--company <slug>` / `-c <slug>` — `biogen`, `amgen`, `abbott`, `genentech`, `pfizer`, `novartis`, `vertex`, `regeneron`, `resilience`, `neurocrine`, `baxter`, `biocryst`, `jnj`, `tandem`, `dexcom`, `irhythm`, `insulet`, `appliedmaterials`, or `all` (default).
+- `--company <slug>` / `-c <slug>` — `biogen`, `amgen`, `abbott`, `genentech`, `pfizer`, `novartis`, `vertex`, `regeneron`, `resilience`, `neurocrine`, `baxter`, `biocryst`, `jnj`, `tandem`, `dexcom`, `irhythm`, `insulet`, `appliedmaterials`, `avav`, or `all` (default).
 - `--query <text>` / `-q <text>` — keyword search (genuine server-side full-text on the Workday tenant)
 - `--location <text>` / `-l <text>` — location filter (substring match against `locationsText`, applied client-side — Workday's location facets are opaque per-tenant IDs, not stable enough to hardcode)
 - `--page <n>` — 1-indexed page
@@ -125,7 +127,8 @@ this API outright — see Notes).
   four as of 2026-07-22) — plus `tandem`, `dexcom`, `irhythm`, `insulet`
   (medtech/diagnostics companies) and `appliedmaterials` (semiconductor
   equipment, has explicit New College Grad reqs), all confirmed live
-  2026-08-05/06. **Eli Lilly was tried and dropped**: its tenant
+  2026-08-05/06. `avav` (AeroVironment, robotics/drones/defense) confirmed
+  live 2026-08-11 with 295 open reqs. **Eli Lilly was tried and dropped**: its tenant
   (`lilly.wd5.myworkdayjobs.com`) returns `HTTP 422` from the CXS jobs
   endpoint no matter which site slug is used, suggesting it blocks this API
   path entirely. Eli Lilly is covered by the WebSearch `site:` fallback in

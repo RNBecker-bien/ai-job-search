@@ -79,12 +79,14 @@ A tenant is identified by four values, all visible in its careers URL
 | irhythm | irhythmtech | wd5 | irhythmtech | iRhythm |
 | insulet | insulet | wd5 | insulet | insuletcareers |
 | appliedmaterials | amat | wd1 | amat | External |
+| avav | avav | wd1 | avav | AVAV |
 
 All four confirmed live as of 2026-07-22 via the POST search endpoint above.
 `tandem`, `dexcom`, `irhythm`, and `insulet` confirmed live 2026-08-05.
 `appliedmaterials` confirmed live 2026-08-06 — note its total open-req count
 runs in the thousands and is mostly non-US/non-entry-level, so scope queries
 with `-q` and `--location` rather than pulling unfiltered.
+`avav` (AeroVironment) confirmed live 2026-08-11 with 295 open reqs.
 
 ## Known non-working tenant: Eli Lilly
 
