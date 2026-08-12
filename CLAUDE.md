@@ -47,7 +47,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ### Technical Skills
 - **Primary:** Python, MATLAB, COMSOL Multiphysics, Arduino
-- **Secondary:** Git/GitHub, ImageJ/FIJI, JMP, LabView (basic)
+- **Secondary:** Git/GitHub, ImageJ/FIJI, JMP, LabVIEW (intermediate)
 - **Domain:** Fluidic and microfluidic systems, biomedical instrumentation, embedded control systems, computer vision for microbial phenotyping
 - **Software:** COMSOL Multiphysics, ImageJ/FIJI, Raspberry Pi, NumPy, pandas, OpenCV, scikit-image, matplotlib
 
