@@ -39,6 +39,7 @@ export const COMPANIES: CompanyEntry[] = [
   { slug: "irhythm", label: "iRhythm Technologies", subdomain: "irhythmtech", wd: "wd5", tenant: "irhythmtech", site: "iRhythm" },
   { slug: "insulet", label: "Insulet", subdomain: "insulet", wd: "wd5", tenant: "insulet", site: "insuletcareers" },
   { slug: "appliedmaterials", label: "Applied Materials", subdomain: "amat", wd: "wd1", tenant: "amat", site: "External" },
+  { slug: "avav", label: "AeroVironment", subdomain: "avav", wd: "wd1", tenant: "avav", site: "AVAV" },
 ]
 
 export function findCompany(slug: string): CompanyEntry | undefined {
