@@ -86,6 +86,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 <!-- Industries and companies you're targeting -->
 - Biomedical devices / diagnostics / genomics: Illumina, Bio-Rad, Agilent, BillionToOne, Natera, Applied Medical, BioMarin Pharmaceutical, Biogen, Amgen, Cedars-Sinai, Avid Bioservices, Twist Bioscience, Axiom Bio, Eli Lilly, Abbott, Quest Diagnostics, Genentech, Siemens Healthineers, Imperative Care, Medtronic, and similar companies
 - Robotics / automation (secondary interest, adjacent to biomedical instrumentation)
+- **Open to adjacent high-tech engineering sectors beyond biomedical** (2026-08-12) - e.g. defense/national-security/aerospace engineering (Areté and similar), where the underlying hands-on hardware/instrumentation/test work is the same even if the industry differs. Priority remains biomedical devices/diagnostics/genomics, but sector alone should not be treated as a scoring penalty when the technical and behavioral fit is strong - the goal is a foot in the door building meaningful engineering work, not a narrow industry match.
 
 ### Deal-breakers
 <!-- Hard constraints on job search. Language requirements are handled separately and

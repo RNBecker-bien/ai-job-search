@@ -101,6 +101,16 @@ Keep answers to 1-2 minutes. Be specific. End with what you learned or would do 
 - Action:
 - Result:
 
+### Hygrometer for robotic liquid handler humidity monitoring (Undergraduate Research Assistant, UCR)
+**Source:** CV / Professional Experience - Undergraduate Research Assistant, UCR
+**What happened:** Built a hygrometer (Raspberry Pi 5, SHT45 sensor) to monitor humidity inside the lab's robotic liquid handlers, wired into a humidity control loop to maintain the controlled environmental conditions required for microbial storage and growth experiments.
+**Why it matters:** Distinct from the incubator stubs - shows self-directed instrumentation work built to support existing lab automation equipment (robotic liquid handlers), relevant for lab-automation and instrumentation-support roles (e.g. Terray Therapeutics - Associate Laboratory Automation Engineer)
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
 ### PicarX autonomous robot car navigation (UCR Library Summer Robotics Camp)
 **Source:** CV / Independent Project - PicarX AI Self-Driving Robot Car
 **What happened:** Assembled and programmed a SunFounder PicarX robot car using Raspberry Pi and Python, implementing autonomous navigation algorithms for line following, edge detection, color tracking, and obstacle avoidance.

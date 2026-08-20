@@ -119,9 +119,10 @@ Does this role advance career goals and contain tasks that energize?
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- Break into industry (biomedical devices/diagnostics/genomics R&D) after graduating, converting academic research experience into a first industry role
+- Break into industry (biomedical devices/diagnostics/genomics R&D preferred) after graduating, converting academic research experience into a first industry role
 - Build hands-on engineering/R&D experience with visible, tangible output (simulations, prototypes, validated pipelines) rather than administrative or pure-compliance work
 - Grow toward robotics/automation-adjacent biomedical engineering work as a secondary long-term interest
+- **Open to adjacent high-tech sectors beyond biomedical** (2026-08-12) - e.g. defense/national-security/aerospace engineering, where the underlying hands-on hardware/instrumentation/test work is the same even if the industry differs. Priority is landing a first engineering role and building something meaningful, not a narrow industry match - do not score Career Alignment low purely because a posting is off the biomedical/diagnostics sector when the hands-on engineering content is strong.
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
 - Tasks that energize: Simulations, new drawings/designs, new engineering approaches, hands-on build-test-iterate cycles, collaborating with a team and bouncing ideas off colleagues, work that visibly contributes to healthcare/medicine
@@ -245,23 +246,33 @@ consumer benefits.
 
 ## Calibration from Past Applications
 
-- **4 applications now have final outcomes, all rejections, none reaching an interview:**
+- **10 applications now have final (rejected) outcomes; 1 more (Petal Surgical) is open and has reached a phone screen:**
   - **Illumina - Engineer I, Fluidic Systems** (entry-level fluidics/instrumentation role): rejected before interview (2026-05-30).
+  - **Illumina - Scientist I, Protein Engineering** (applied outside this workflow, no fit score recorded): rejected (2026-08-08), no interview.
   - **Applied Medical - Quality Engineer I**: rejected before interview (2026-07-17).
-  - **BillionToOne - Research Associate**: advanced to a skills assessment before being rejected (2026-07-02) - the furthest progress of the four, suggesting some real traction even though it did not convert.
+  - **BillionToOne - Research Associate**: advanced to a skills assessment before being rejected (2026-07-02) - the furthest progress reached by any rejected application, suggesting some real traction even though it did not convert.
   - **Natera - Laboratory Automation Engineer**: rejected before interview (2026-07-29), fit score 62.3/100 - exact degree match but flagged going in for a gap on robotic workcell/liquid-handling platform experience and the posting's stated 2+ years of lab automation engineering experience. Generic rejection language, no specific feedback given.
-- **Confirmed pattern (n=4 - the threshold this note was watching for):** entry-level fluidics/QC/automation/bench-science roles at established medtech, diagnostics, and genomics companies have not converted past initial screening despite moderate-to-good fit scores (55-70 range). All four postings named a specific years-of-experience or hands-on-platform requirement (industry lab experience, robotic workcell/liquid-handling platforms, etc.) that the candidate's profile met on paper but only with academic rather than industry exposure.
-- **Decision (2026-08-03):** discussed with the candidate - continuing to apply broadly rather than narrowing scope or reweighting scoring for this role cluster. Do not down-weight the "industry vs. academic experience" gap in scoring based on this pattern alone; BillionToOne shows the profile can pass initial screening. Revisit this decision if the pattern continues past ~6-8 resolved rejections in this cluster.
+  - **Honeywell - R&D Tech II**: rejected before interview (2026-08-13), fit score 52/100 - significant sector pivot (petrochemical/industrial automation vs. biomedical) acknowledged honestly going in.
+  - **Medtronic - R&D Engineer I**: rejected before interview (2026-08-13), fit score 61.5/100 - strong root-cause/DV-testing overlap but named gaps in Nitinol/implant/textile experience.
+  - **Neuralink - R&D Materials Engineer Intern**: rejected before interview (2026-08-13), fit score 54/100 - gaps in SolidWorks/CAD, surface characterization, and microscopy disclosed honestly.
+  - **Cedars-Sinai - Biomedical Technician, Genomics Core**: rejected, no interview.
+  - **PACIV - Entry Level Industrial Automation & Controls Engineer**: rejected, no interview.
+- **Petal Surgical - Associate R&D Engineer (Acoustics, Therapy)** (fit score 71/100, Good Fit): still open. Advanced to a **phone screen** with the hiring manager (invited 2026-08-13, completed 2026-08-18) - the first application in this framework's history to reach a live interview conversation, not just a written skills assessment.
+- **Confirmed pattern (n=10 rejections, holding since the original n=4 note):** entry-level fluidics/QC/automation/bench-science roles at established medtech, diagnostics, and genomics companies have mostly not converted past initial screening despite moderate-to-good fit scores (52-71 range). Most postings named a specific years-of-experience or hands-on-platform requirement (industry lab experience, robotic workcell/liquid-handling platforms, SolidWorks/CAD, surface characterization instruments, etc.) that the candidate's profile met on paper but only with academic rather than industry exposure.
+- **New signal (2026-08-18):** Petal Surgical breaks the pattern - it is both the highest fit score among recently-decided/advancing applications (71/100) and the first to reach a phone screen, on a posting where the candidate's lab-instrumentation coursework (oscilloscope, function generator, ultrasound transducer, AD620 amplifier) matched unusually literally against the posting's stated tools, with CAD/SolidWorks and ex vivo experience disclosed honestly as gaps rather than hidden. Too early to treat as a confirmed counter-pattern (n=1), but worth tracking: it suggests literal tool/instrument-name overlap in the CV may matter more than years-of-experience framing for getting past initial screening.
+- **Decision (2026-08-03, still standing):** discussed with the candidate - continuing to apply broadly rather than narrowing scope or reweighting scoring for this role cluster. Do not down-weight the "industry vs. academic experience" gap in scoring based on this pattern alone; BillionToOne and now Petal Surgical show the profile can pass initial screening. Revisit this decision if the pattern continues past ~15-20 resolved rejections in this cluster, or update it sooner if Petal Surgical converts further and the literal-tool-overlap signal repeats on another application.
 
 ## Weighting
-- Technical Skills: 30%
-- Experience Match: 35%
+- Technical Skills: 37.5%
+- Experience Match: 37.5%
 - Behavioral Fit: 15%
-- Career Alignment: 20%
+- Career Alignment: 10%
 
 (Location is pass/fail, not weighted)
 
 **Rationale (2026-08-04):** shifted 10 points from Career Alignment to Experience Match, at the candidate's request, to better reflect how a recruiter actually screens - demonstrated experience fit over whether the role serves the candidate's personal career trajectory. Career Alignment remains scored and reported (it still matters for the candidate's own decision), just weighted less heavily into the overall recommendation score.
+
+**Rationale (2026-08-18):** shifted a further 10 points from Career Alignment to Technical Skills and Experience Match (5 points each), at the candidate's request, continuing the same recruiter-realism logic - screening leans almost entirely on demonstrated technical/experience fit, with career trajectory mattering far less to whether a resume clears the first screen. Career Alignment remains scored and reported for the candidate's own decision-making, just weighted minimally into the overall score.
 
 ## Thresholds
 - **Strong Fit** (75+): Definitely apply, tailor everything
