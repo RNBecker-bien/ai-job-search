@@ -15,6 +15,8 @@ export const COMPANIES: CompanyEntry[] = [
   { slug: "twistbioscience", label: "Twist Bioscience" },
   { slug: "amyrisinc", label: "Amyris" },
   { slug: "calahealth", label: "Cala Health" },
+  { slug: "veracyte", label: "Veracyte" },
+  { slug: "andurilindustries", label: "Anduril" },
 ]
 
 export function findCompany(slug: string): CompanyEntry | undefined {

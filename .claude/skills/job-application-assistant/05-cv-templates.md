@@ -243,6 +243,15 @@ When the role sits outside your home domain, **lead with the domain-transfer arg
 **For lab automation / instrumentation troubleshooting roles (biotech)** *[Used for: terraytx_associate_laboratory_automation_engineer]*:
 > Bioengineering graduate (UC Riverside, June 2026) with hands-on experience troubleshooting automated hardware and software systems across sensor, actuator, and fluidics control loops. Diagnosed and resolved a CO$_2$ sensor drift event and a thermal-runaway risk in a TEC power system, and located and verified the fix for a chamber leak, on an environmentally controlled instrument, restoring it to service through systematic root-cause investigation. Builds Python- and ImageJ-based computer vision pipelines that turn raw imaging data into structured, validated datasets for high-throughput biological workflows.
 
+**For mechanical/biomedical hardware test engineering roles** *[Used for: currentsurgical_bme_me_rd_test_engineer]*:
+> Bioengineering graduate (UC Riverside, June 2026) with hands-on experience spanning microfluidics, precision instrumentation, and ultrasound-based measurement, directly aligned with the electronics, microfluidics, and acoustic physics a clinical prototype depends on. Designed a two-inlet microfluidic device and modeled species transport in COMSOL Multiphysics to investigate drug delivery limitations in poorly perfused tumor microenvironments. Operated oscilloscopes, function generators, and ultrasound transducers for time-of-flight measurement, and designed an AD620 instrumentation amplifier circuit to acquire biosignals. Co-designed and iteratively prototyped a mammalian cell culture incubator with embedded sensor and actuator integration, diagnosing and resolving multiple hardware failure modes through systematic root-cause troubleshooting. Writes MATLAB and Python tools for experimental data processing and statistical analysis.
+
+**For systems verification / compliance-testing engineering roles** *[Used for: cytekbiosciences_systems_verification_engineer_i]*:
+> Bioengineering graduate (UC Riverside, June 2026) with hands-on experience in electrical/bioinstrumentation measurement, design verification testing, and statistical data analysis for compliance-oriented laboratory environments. Executed systematic design verification testing on a mammalian cell culture incubator, diagnosing and correcting three independent hardware failure modes with documented, verified fixes, and operated oscilloscopes, function generators, and an AD620 instrumentation amplifier to characterize analog filter circuits and acquire biosignals. Applies JMP-based statistical quality control (Grubbs outlier testing, RSD) and Good Laboratory Practice-aligned documentation across cross-disciplinary electrical, mechanical, and software engineering work.
+
+**For product-development R&D engineering roles (design verification & DHF documentation)** *[Used for: stryker_rd_engineer]*:
+> Bioengineering graduate (UC Riverside, June 2026) with hands-on experience across the full concept-to-verified-fix product development cycle: mechanical prototyping, bench testing, and systematic root-cause investigation of hardware systems. Co-designed and iteratively prototyped a mammalian cell culture incubator, running design verification testing that diagnosed and corrected a sensor drift event and a thermal-runaway risk, and verified the fix for a chamber leak, and contributed directly to the project's Design History File, including the scope and objectives, target specification table, design matrix/house of quality, prototype documentation, data validation, and bill of materials. Applies statistical analysis (MATLAB, Python, JMP, Minitab) to evaluate test data, grounded in coursework spanning biomechanics, biomaterials, and tissue engineering. Ramps quickly on new CAD platforms, having independently learned COMSOL Multiphysics for parametric modeling, and collaborates readily across cross-functional teams.
+
 Statements labeled *[Used for: <company>_<role>]* were extracted from archived application drafts by `/setup` Path A. They are **phrasing references, never fact sources**: when drafting from one, every factual claim still comes from `01-candidate-profile.md` - a past tailored draft does not vouch for its own accuracy. Numbers or specifics that appeared in an archived draft but are not grounded in `01-candidate-profile.md` (e.g., dataset-size figures that drifted between drafts) have been dropped from these templates - only the framing language was kept.
 
 ### Core Competencies / Skills Section (Best Practice)
@@ -309,6 +318,17 @@ If there is a gap in your employment history:
 
 ### Evidence Links
 Wherever the CV names a verifiable artifact - a public project, a hackathon entry, a publication - carry its link (`\href`) so a reader can verify the claim in one click. A CV whose strongest claims are checkable reads as more credible everywhere else too.
+
+### Affiliations (formatting)
+
+**Dates are italicized and right-aligned at the same column `\cventry` uses everywhere else in the CV, not in parentheses.** Use `\cvitemwithcomment` (a moderncv command) rather than a plain `\hfill` - `\hfill` right-aligns to the itemize's own `\linewidth`, which is not guaranteed to be the same value as `\cventry`'s `\maincolumnwidth`, so the date can land at a visibly different distance from the page edge than the Education/Experience/Leadership dates. `\cvitemwithcomment` uses that same `\maincolumnwidth` internally, so the alignment matches by construction rather than by eyeballing it:
+
+```latex
+\item{\cvitemwithcomment{}{California Alliance for Minority Participation (CAMP) Scholar, UC Riverside}{Sept 2024-Jun 2026}}
+\item{\cvitemwithcomment{}{Member, Mathematics, Engineering, Science, Achievement (MESA)}{Jan 2026-Jun 2026}}
+```
+
+The first `{}` is the optional label prefix (`\cvitemwithcomment[vspace]{label}{text}{comment}`) - leave it empty here, since the affiliation name itself is the main text and a label would just add a redundant colon. Not `... UC Riverside (Sept 2024-Jun 2026)`, and not a bare `\hfill \textit{...}` - both were tried and superseded (2026-08-26) once the `\hfill` version was confirmed to land at a different column than `\cventry`'s dates via `pdftotext -layout` column comparison.
 
 ### Honors and Awards
 - Keep format brief, one line each

@@ -8,13 +8,13 @@ interface SearchResult {
 
 describe("search (live)", () => {
   test("returns results for a known company", async () => {
-    const result = await runCLI(["search", "--company", "imperativecare", "--limit", "5"])
+    const result = await runCLI(["search", "--company", "penumbrainc", "--limit", "5"])
     const data = parseJSON<SearchResult>(result)
     expect(data.results.length).toBeGreaterThan(0)
     for (const r of data.results.slice(0, 3)) {
-      expect(r.id).toMatch(/^imperativecare:[A-Za-z0-9]+$/)
+      expect(r.id).toMatch(/^penumbrainc:[0-9a-f-]{36}$/)
       expect(r.title.length).toBeGreaterThan(0)
-      expect(r.url).toContain("applytojob.com")
+      expect(r.url).toContain("lever.co")
     }
   }, 30000)
 

@@ -131,7 +131,7 @@ Does this role advance career goals and contain tasks that energize?
 
 **Life situation alignment:** Consider personal constraints:
 - **Security**: Hard salary floor of $70,000 (deal-breaker, see CLAUDE.md) - candidate is graduating (degree conferred June 12, 2026) and needs a stable industry entry point
-- **Flexibility**: Max 50% travel (hard deal-breaker); open to relocation within a defined set of regions (California Carmel-Sonoma corridor or San Diego; Chicago, Boston, New York, Raleigh within ~50 miles; remote OK) - see Location field in `01-candidate-profile.md`
+- **Flexibility**: Max 50% travel (hard deal-breaker); open to relocation within a defined set of regions (California Carmel-Sonoma corridor or San Diego; remote OK) - see Location field in `01-candidate-profile.md`
 - **Professional development**: Priority is converting academic-only research experience into recognized industry experience; secondary priority is deepening automation/robotics and CAD skills, which are current gaps
 
 ### 6. Salary Benchmark (Optional)
@@ -246,7 +246,7 @@ consumer benefits.
 
 ## Calibration from Past Applications
 
-- **10 applications now have final (rejected) outcomes; 1 more (Petal Surgical) is open and has reached a phone screen:**
+- **16 applications now have final outcomes (11 rejected, 5 no_response); ~20 more are in_progress, the most advanced being Petal Surgical (CEO-screen stage):**
   - **Illumina - Engineer I, Fluidic Systems** (entry-level fluidics/instrumentation role): rejected before interview (2026-05-30).
   - **Illumina - Scientist I, Protein Engineering** (applied outside this workflow, no fit score recorded): rejected (2026-08-08), no interview.
   - **Applied Medical - Quality Engineer I**: rejected before interview (2026-07-17).
@@ -257,9 +257,12 @@ consumer benefits.
   - **Neuralink - R&D Materials Engineer Intern**: rejected before interview (2026-08-13), fit score 54/100 - gaps in SolidWorks/CAD, surface characterization, and microscopy disclosed honestly.
   - **Cedars-Sinai - Biomedical Technician, Genomics Core**: rejected, no interview.
   - **PACIV - Entry Level Industrial Automation & Controls Engineer**: rejected, no interview.
+  - **Imperative Care - R&D Engineer, I**: rejected (2026-08-07) before interview, fit evaluated going in with a genuine CAD/SolidWorks gap disclosed honestly.
+  - **Abbott - Associate Design Quality Engineer**: rejected (2026-08-25) before interview, fit score 68/100 (Good Fit) - strongest experience-match of its batch (0-2 years required, cleanly met), yet still didn't convert past initial screening. Originally recorded as no_response (posting pulled 2026-08-23) before the rejection email arrived two days later - a reminder that a pulled-posting no_response can still resolve to a real rejection afterward.
 - **Petal Surgical - Associate R&D Engineer (Acoustics, Therapy)** (fit score 71/100, Good Fit): still open. Advanced to a **phone screen** with the hiring manager (invited 2026-08-13, completed 2026-08-18) - the first application in this framework's history to reach a live interview conversation, not just a written skills assessment.
 - **Confirmed pattern (n=10 rejections, holding since the original n=4 note):** entry-level fluidics/QC/automation/bench-science roles at established medtech, diagnostics, and genomics companies have mostly not converted past initial screening despite moderate-to-good fit scores (52-71 range). Most postings named a specific years-of-experience or hands-on-platform requirement (industry lab experience, robotic workcell/liquid-handling platforms, SolidWorks/CAD, surface characterization instruments, etc.) that the candidate's profile met on paper but only with academic rather than industry exposure.
 - **New signal (2026-08-18):** Petal Surgical breaks the pattern - it is both the highest fit score among recently-decided/advancing applications (71/100) and the first to reach a phone screen, on a posting where the candidate's lab-instrumentation coursework (oscilloscope, function generator, ultrasound transducer, AD620 amplifier) matched unusually literally against the posting's stated tools, with CAD/SolidWorks and ex vivo experience disclosed honestly as gaps rather than hidden. Too early to treat as a confirmed counter-pattern (n=1), but worth tracking: it suggests literal tool/instrument-name overlap in the CV may matter more than years-of-experience framing for getting past initial screening.
+- **No-response pattern (n=5, updated 2026-08-25):** distinct from the rejection pattern above, 5 applications remain resolved to `no_response` after their postings were pulled/expired with no reply in 18-40 days: Anthropic - Research Associate Biology (no score recorded, applied outside full evaluation), Fresenius Kabi - Associate Research Scientist (Moderate Fit, 58/100), J&J - Clinical Engineer Surgical Robotics (no score recorded, CV-only), Mass General Brigham - Bioinformatician I (Good Fit, 71.5/100), and The Fountain Group/staffing agency - Associate Scientist I (Moderate Fit, 47.5/100). Notably, Mass General Brigham is the **second-highest fit score** of any resolved application in this framework (behind only Petal Surgical's 71), yet drew zero response - suggesting no-response, unlike the rejection pattern, is not cleanly predicted by fit score. (Abbott was originally in this bucket but moved to the rejected list above on 2026-08-25 when a delayed rejection email arrived - worth remembering that `no_response` isn't always final.)
 - **Decision (2026-08-03, still standing):** discussed with the candidate - continuing to apply broadly rather than narrowing scope or reweighting scoring for this role cluster. Do not down-weight the "industry vs. academic experience" gap in scoring based on this pattern alone; BillionToOne and now Petal Surgical show the profile can pass initial screening. Revisit this decision if the pattern continues past ~15-20 resolved rejections in this cluster, or update it sooner if Petal Surgical converts further and the literal-tool-overlap signal repeats on another application.
 
 ## Weighting

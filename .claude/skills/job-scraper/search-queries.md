@@ -13,8 +13,9 @@ The `site:` query templates in this file are the **WebSearch fallback** — for 
 ## Search Sites
 
 Primary (portal CLIs installed under `.agents/skills/` — `/scrape` runs these directly, no `site:` query needed):
-- **greenhouse-search** — BillionToOne, Natera, Twist Bioscience, Amyris, Cala Health (public Greenhouse JSON API)
-- **workday-search** — Biogen, Amgen, Abbott, Genentech, Pfizer, Novartis, Vertex Pharmaceuticals, Regeneron, Resilience, Neurocrine Biosciences, Baxter, BioCryst Pharmaceuticals, Johnson & Johnson, Tandem Diabetes Care, Dexcom, iRhythm Technologies, Insulet, Applied Materials (public Workday CXS JSON API)
+- **greenhouse-search** — BillionToOne, Natera, Twist Bioscience, Amyris, Cala Health, Veracyte, Anduril (public Greenhouse JSON API)
+- **workday-search** — Biogen, Amgen, Abbott, Genentech, Pfizer, Novartis, Vertex Pharmaceuticals, Regeneron, Resilience, Neurocrine Biosciences, Baxter, BioCryst Pharmaceuticals, Johnson & Johnson, Tandem Diabetes Care, Dexcom, iRhythm Technologies, Insulet, Applied Materials, AeroVironment, Edwards Lifesciences, Integra LifeSciences, PacBio (public Workday CXS JSON API)
+- **lever-search** — Penumbra, Inc. (public Lever Postings JSON API)
 - **linkedin-search** / **freehire-search** — general-purpose, country-agnostic
 - **biospace-search** — BioSpace job board (biotech/pharma/clinical research industry-specific)
 
@@ -27,6 +28,7 @@ Secondary (no CLI available — WebSearch `site:` fallback):
   - Applied Medical — custom career site (careers.appliedmedical.com/north-america/jobs), no ATS API identified
   - Cedars-Sinai — careers.cshs.org, ATS platform unconfirmed
   - Avid Bioservices — Jobvite-hosted (jobs.jobvite.com/avidbio/jobs), server-rendered HTML, no JSON API found
+  - Avidity Biosciences — Jobvite-hosted (jobs.jobvite.com/aviditybiosciences/jobs), server-rendered HTML, no JSON API found
   - Eli Lilly — Workday-hosted but its CXS API rejects requests outright (see `.agents/skills/workday-search/url-reference.md`)
   - Quest Diagnostics, Cellectis — Oracle Cloud HCM, no public JSON API identified
   - AbbVie — SmartRecruiters-hosted (careers.smartrecruiters.com/abbvie), not yet integrated as a CLI
@@ -43,10 +45,16 @@ Secondary (no CLI available — WebSearch `site:` fallback):
   - bioMérieux — Durham NC, ATS platform unconfirmed
   - iCAD — HQ Nashua NH (outside target regions), but maintains a San Jose CA office; ATS platform unconfirmed (careers.icad.com)
   - Cynosure (merged with Lutronic in 2024, now Cynosure Lutronic under Hahn & Company) — CA openings seen in Fremont and San Francisco; ATS platform unconfirmed
+  - **Added 2026-08-26**, no CLI built yet (no public JSON API found or ATS not yet integrated):
+    - Boston Scientific — Eightfold.ai-hosted
+    - 10x Genomics — Kula.ai-hosted
+    - General Atomics — BrassRing-hosted
+    - Northrop Grumman, L3Harris, Kratos Defense — defense/aerospace sector-openness expansion (see CLAUDE.md's 2026-08-12 sector note); ATS platforms not yet identified
+    - Auris Health (J&J subsidiary — surgical robotics), Moon Surgical, Vicarious Surgical — robotics/surgical-device expansion; ATS platforms not yet identified
 
 ## Query Categories
 
-Queries are grouped by priority. Write **each category in every language from your Languages table** (see Language scope above). Each query should be combined with your location terms (California, Carmel-to-Sonoma corridor, San Diego, Chicago, Boston, New York, Raleigh, or "remote") where the site supports it.
+Queries are grouped by priority. Write **each category in every language from your Languages table** (see Language scope above). Each query should be combined with your location terms (California, Carmel-to-Sonoma corridor, San Diego, or "remote") where the site supports it.
 
 **Organize by function, not job title.** The same underlying work carries different titles across companies and markets (a "Data Scientist" role at one employer may be posted as "Insights Analyst" or "Data Consultant" at another). Name each priority category after the function it covers, and list several plausible job titles as query variants within that category rather than betting an entire priority tier on one exact title string.
 

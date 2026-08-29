@@ -40,6 +40,9 @@ export const COMPANIES: CompanyEntry[] = [
   { slug: "insulet", label: "Insulet", subdomain: "insulet", wd: "wd5", tenant: "insulet", site: "insuletcareers" },
   { slug: "appliedmaterials", label: "Applied Materials", subdomain: "amat", wd: "wd1", tenant: "amat", site: "External" },
   { slug: "avav", label: "AeroVironment", subdomain: "avav", wd: "wd1", tenant: "avav", site: "AVAV" },
+  { slug: "edwards", label: "Edwards Lifesciences", subdomain: "edwards", wd: "wd5", tenant: "edwards", site: "edwardscareers" },
+  { slug: "integralife", label: "Integra LifeSciences", subdomain: "integralife", wd: "wd1", tenant: "integralife", site: "Careers" },
+  { slug: "pacbio", label: "PacBio", subdomain: "pacbio", wd: "wd12", tenant: "pacbio", site: "PacBio-" },
 ]
 
 export function findCompany(slug: string): CompanyEntry | undefined {

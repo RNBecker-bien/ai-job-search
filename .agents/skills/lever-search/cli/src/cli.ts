@@ -3,9 +3,9 @@ import { search } from "./commands/search.js"
 import { detail } from "./commands/detail.js"
 
 const cli = await createCLI({
-  name: "imperativecare-cli",
+  name: "lever-cli",
   version: "1.0.0",
-  description: "CLI for searching jobs across ApplyToJob (JazzHR)-hosted company careers pages",
+  description: "CLI for searching jobs across Lever-hosted company boards",
 })
 
 cli.command(search)

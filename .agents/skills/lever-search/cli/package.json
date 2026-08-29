@@ -1,11 +1,11 @@
 {
-  "name": "imperativecare-cli",
+  "name": "lever-cli",
   "version": "1.0.0",
-  "description": "CLI for searching jobs across ApplyToJob (JazzHR)-hosted company careers pages",
+  "description": "CLI for searching jobs across Lever-hosted company boards",
   "type": "module",
   "main": "src/cli.ts",
   "bin": {
-    "imperativecare": "src/cli.ts"
+    "lever": "src/cli.ts"
   },
   "scripts": {
     "start": "bun run src/cli.ts",

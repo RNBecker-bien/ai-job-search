@@ -17,7 +17,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ### Identity
 - **Name:** Richard Becker
-- **Location:** Riverside, California, USA (open to relocating anywhere in California between Carmel and Sonoma, or San Diego; also open to Chicago IL, Boston MA, New York NY, and Raleigh NC, including within ~50 miles of each; remote OK; max 50% travel)
+- **Location:** Salinas, California, USA (as of 2026-08-27; moving to the San Jose, CA area within approximately one month; formerly Riverside, CA) (open to relocating anywhere in California between Carmel and Sonoma, or San Diego; remote OK; max 50% travel)
 - **Languages:**
   | Language | Level |
   |----------|-------|
@@ -84,7 +84,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ### Target Sectors
 <!-- Industries and companies you're targeting -->
-- Biomedical devices / diagnostics / genomics: Illumina, Bio-Rad, Agilent, BillionToOne, Natera, Applied Medical, BioMarin Pharmaceutical, Biogen, Amgen, Cedars-Sinai, Avid Bioservices, Twist Bioscience, Axiom Bio, Eli Lilly, Abbott, Quest Diagnostics, Genentech, Siemens Healthineers, Imperative Care, Medtronic, and similar companies
+- Biomedical devices / diagnostics / genomics: Illumina, Bio-Rad, Agilent, BillionToOne, Natera, Applied Medical, BioMarin Pharmaceutical, Biogen, Amgen, Cedars-Sinai, Avid Bioservices, Twist Bioscience, Axiom Bio, Eli Lilly, Abbott, Quest Diagnostics, Genentech, Siemens Healthineers, Imperative Care, Medtronic, Veracyte, Avidity Biosciences, and similar companies
 - Robotics / automation (secondary interest, adjacent to biomedical instrumentation)
 - **Open to adjacent high-tech engineering sectors beyond biomedical** (2026-08-12) - e.g. defense/national-security/aerospace engineering (Areté and similar), where the underlying hands-on hardware/instrumentation/test work is the same even if the industry differs. Priority remains biomedical devices/diagnostics/genomics, but sector alone should not be treated as a scoring penalty when the technical and behavioral fit is strong - the goal is a foot in the door building meaningful engineering work, not a narrow industry match.
 

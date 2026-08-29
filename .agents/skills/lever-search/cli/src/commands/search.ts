@@ -1,11 +1,11 @@
 import { defineCommand, option } from "@bunli/core"
 import { z } from "zod"
-import { fetchHtml, parseJobList, writeError, type JobCard } from "../helpers.js"
-import { COMPANIES, findCompany, listUrl } from "../companies.js"
+import { apiFetch, postingsUrl, toJobCard, writeError, type LeverPosting, type JobCard } from "../helpers.js"
+import { COMPANIES, findCompany } from "../companies.js"
 
 export const search = defineCommand({
   name: "search",
-  description: "Search job listings across ApplyToJob (JazzHR)-hosted company careers pages",
+  description: "Search job listings across Lever-hosted company boards",
   options: {
     company: option(z.string().default("all"), {
       short: "c",
@@ -20,7 +20,7 @@ export const search = defineCommand({
       description: "Location filter (case-insensitive substring match against posting location)",
     }),
     jobage: option(z.coerce.number().optional(), {
-      description: "Unsupported on this ATS: postings carry no date anywhere on the site. Accepted but ignored (a note is added to meta).",
+      description: "Max age of posting in days (filters on createdAt)",
     }),
     page: option(z.coerce.number().int().min(1).default(1), {
       description: "Page number (1-indexed, client-side pagination)",
@@ -51,9 +51,11 @@ export const search = defineCommand({
     try {
       const allCards: JobCard[] = []
       for (const target of targets) {
-        const html = await fetchHtml(listUrl(target))
-        if (!html) continue
-        allCards.push(...parseJobList(html, target))
+        const postings = await apiFetch<LeverPosting[]>(postingsUrl(target.slug))
+        if (!postings) continue
+        for (const posting of postings) {
+          allCards.push(toJobCard(target.slug, target.label, posting))
+        }
       }
 
       if (signal.aborted) return
@@ -67,17 +69,23 @@ export const search = defineCommand({
         const l = flags.location.toLowerCase()
         results = results.filter((r) => r.location?.toLowerCase().includes(l))
       }
+      if (flags.jobage !== undefined) {
+        const cutoff = Date.now() - flags.jobage * 24 * 60 * 60 * 1000
+        results = results.filter((r) => {
+          if (!r.date) return true
+          const t = Date.parse(r.date)
+          return Number.isNaN(t) ? true : t >= cutoff
+        })
+      }
 
       const total = results.length
       const start = (flags.page - 1) * flags.limit
       const paged = results.slice(start, start + flags.limit)
 
-      const meta: Record<string, unknown> = { total, page: flags.page, perPage: flags.limit }
-      if (flags.jobage !== undefined) {
-        meta.jobageIgnored = "This ATS exposes no posting date on the listing or detail page; --jobage was accepted but had no effect."
+      const output = {
+        meta: { total, page: flags.page, perPage: flags.limit },
+        results: paged,
       }
-
-      const output = { meta, results: paged }
 
       if (flags.format === "json") {
         console.log(JSON.stringify(output, null, 2))
@@ -87,16 +95,16 @@ export const search = defineCommand({
         outputPlain(paged)
       }
     } catch (err) {
-      writeError(err instanceof Error ? err.message : String(err), "FETCH_ERROR")
+      writeError(err instanceof Error ? err.message : String(err), "API_ERROR")
       process.exit(1)
     }
   },
 })
 
 function outputTable(results: JobCard[]): void {
-  console.log("id                          title                                    company              location")
+  console.log("id                                                             title                                    company              location")
   for (const r of results) {
-    const id = r.id.substring(0, 27).padEnd(28)
+    const id = r.id.substring(0, 62).padEnd(63)
     const title = r.title.substring(0, 40).padEnd(40)
     const company = (r.company ?? "-").substring(0, 20).padEnd(20)
     const location = r.location ?? "-"
@@ -110,9 +118,9 @@ function outputPlain(results: JobCard[]): void {
     console.log(`title: ${r.title}`)
     console.log(`company: ${r.company ?? "-"}`)
     console.log(`location: ${r.location ?? "-"}`)
-    console.log(`department: ${r.department ?? "-"}`)
     console.log(`date: ${r.date ?? "-"}`)
     console.log(`url: ${r.url}`)
+    if (r.description) console.log(`description: ${r.description}`)
     console.log("")
   }
 }
